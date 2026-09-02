@@ -1,52 +1,69 @@
 ---
 import Logo from "./Logo.astro";
+import Button from "./Button.astro";
 
 const year = new Date().getFullYear();
 ---
 
 <footer class="border-t border-gold-500/40 bg-navy-900 text-white">
-	<div
-		class="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-8 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8"
-	>
-		<Logo />
+  <div
+    class="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 py-10 text-center sm:px-6 md:grid-cols-4 md:divide-x md:divide-gold-500/30 md:text-left lg:px-8"
+  >
+    <div class="flex items-center justify-center md:justify-start">
+      <Logo class="h-16" />
+    </div>
 
-		<p class="max-w-sm text-sm text-white/80">
-			Comprehensive FDCPA and Regulation F training designed to strengthen
-			compliance knowledge, judgment, and day-to-day decision-making.
-		</p>
+    <div class="flex items-center justify-center md:justify-start md:pl-6">
+      <p class="text-sm text-white/80">
+        Practical training that builds knowledge, strengthens judgment, and
+        drives compliance.
+      </p>
+    </div>
 
-		<a
-			href="https://www.linkedin.com/in/gayle-w-bb013a2"
-			target="_blank"
-			rel="noopener noreferrer"
-			class="inline-flex items-center gap-2 text-sm font-medium text-white hover:text-gold-400"
-		>
-			<span
-				class="inline-flex h-8 w-8 items-center justify-center rounded bg-white text-navy-900"
-				aria-hidden="true"
-			>
-				<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-					<path
-						d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"
-					></path>
-				</svg>
-			</span>
-			Connect with us on LinkedIn
-		</a>
-	</div>
+    <div
+      class="flex flex-col items-center justify-center gap-3 md:items-start md:pl-6"
+    >
+      <Button href="/enroll-today" variant="glow" arrow
+        >Start Training Today</Button
+      >
+      <a
+        href="/"
+        class="text-sm font-bold tracking-wide text-gold-400 hover:text-gold-300"
+      >
+        FDCPATraining.com
+      </a>
+    </div>
 
-	<div class="border-t border-white/10">
-		<div
-			class="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4 text-xs text-white/70 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8"
-		>
-			<p>&copy; {year} FDCPA Training. All Rights Reserved.</p>
-			<nav aria-label="Legal">
-				<ul class="flex gap-4">
-					<li><a href="/privacy-policy" class="hover:text-gold-400">Privacy Policy</a></li>
-					<li><a href="/terms-of-use" class="hover:text-gold-400">Terms of Use</a></li>
-					<li><a href="/contact" class="hover:text-gold-400">Contact Us</a></li>
-				</ul>
-			</nav>
-		</div>
-	</div>
+    <div class="flex items-center justify-center md:justify-start md:pl-6">
+      <a
+        href="https://www.linkedin.com/in/gayle-w-bb013a2"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-3 text-sm text-white hover:text-gold-400"
+      >
+        <span
+          class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded bg-white text-navy-900"
+          aria-hidden="true"
+        >
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path
+              d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"
+            ></path>
+          </svg>
+        </span>
+        <span class="text-left">
+          View Professional Background<br />
+          on LinkedIn <span aria-hidden="true">&rarr;</span>
+        </span>
+      </a>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10">
+    <div
+      class="mx-auto max-w-7xl px-4 py-4 text-center text-xs text-white/70 sm:px-6 lg:px-8"
+    >
+      <p>&copy; 1995 - {year} FDCPA Training. All Rights Reserved.</p>
+    </div>
+  </div>
 </footer>
