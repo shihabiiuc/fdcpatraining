@@ -1,0 +1,39 @@
+---
+interface Props {
+	href: string;
+	variant?: "primary" | "outline" | "outline-light" | "glow";
+	class?: string;
+	arrow?: boolean;
+	target?: "_blank";
+}
+
+const {
+	href,
+	variant = "primary",
+	class: className = "",
+	arrow = false,
+	target,
+} = Astro.props;
+
+const variants = {
+	primary:
+		"font-semibold bg-gold-500 text-navy-900 hover:bg-gold-400 focus-visible:outline-navy-900",
+	outline:
+		"font-semibold border-2 border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white",
+	"outline-light":
+		"font-semibold border-2 border-white text-white hover:bg-white hover:text-navy-900",
+	glow: "rounded-[7px] font-black text-black bg-[linear-gradient(180deg,#f5c866_0%,#d99a3d_45%,#b9822a_100%)] shadow-[inset_0_1px_0_rgba(255,255,255,0.55),inset_0_-1px_0_rgba(0,0,0,0.25)] hover:brightness-105 focus-visible:outline-navy-900",
+};
+
+const rel = target === "_blank" ? "noopener noreferrer" : undefined;
+---
+
+<a
+	href={href}
+	target={target}
+	rel={rel}
+	class={`inline-flex items-center gap-2 px-6 py-3 font-heading text-sm tracking-wide uppercase transition-colors ${variants[variant]} ${className}`}
+>
+	<slot />
+	{arrow && <span aria-hidden="true">&rarr;</span>}
+</a>

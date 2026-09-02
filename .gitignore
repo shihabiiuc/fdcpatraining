@@ -1,0 +1,51 @@
+# build output
+dist/
+
+# generated types
+.astro/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+logs/
+*.log
+
+# environment variables
+.env
+.env.local
+.env.*.local
+.env.production
+
+# editor / OS cruft
+.DS_Store
+Thumbs.db
+.idea/
+*.swp
+*.swo
+
+# TypeScript build info
+*.tsbuildinfo
+
+# deployment platform output
+.vercel/
+.netlify/
+
+# AI coding assistant configuration
+# (keep these local only — not for public/client-facing repos)
+CLAUDE.md
+AGENTS.md
+GEMINI.md
+.claude/
+.clauderules
+.cursorrules
+.cursor/
+.windsurfrules
+.clinerules/
+
+# internal design reference material (client comps, briefs — not for public repo)
+design/

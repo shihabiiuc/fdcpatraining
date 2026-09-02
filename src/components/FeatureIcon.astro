@@ -1,0 +1,70 @@
+---
+interface Props {
+	title: string;
+	description?: string;
+	icon:
+		| "shield-check"
+		| "scale"
+		| "team"
+		| "building"
+		| "bank"
+		| "person"
+		| "headset"
+		| "handshake";
+	iconBg?: "navy" | "gold" | "none";
+}
+
+const { title, description, icon, iconBg = "navy" } = Astro.props;
+
+const icons: Record<Props["icon"], string> = {
+	"shield-check":
+		'<path d="M12 3 20 6v6c0 5-3.4 8.4-8 9-4.6-.6-8-4-8-9V6Z"/><path d="m8.5 12 2.5 2.5 4.5-5"/>',
+	scale:
+		'<path d="M12 3v18M7 6h10M4 10 7 6l3 4M14 10l3-4 3 4"/><path d="M4 10a3 3 0 0 0 6 0M14 10a3 3 0 0 0 6 0"/><path d="M8 21h8"/>',
+	team: '<circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14a5 5 0 0 1 5.5 5"/>',
+	building:
+		'<path d="M4 21V6l7-3 7 3v15"/><path d="M4 21h16"/><path d="M9 9h1M14 9h1M9 13h1M14 13h1M9 17h1M14 17h1"/>',
+	bank: '<path d="M3 10 12 4l9 6"/><path d="M5 10v9M9 10v9M15 10v9M19 10v9"/><path d="M3 21h18"/>',
+	person: '<circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-7 8-7s8 2.6 8 7"/>',
+	headset:
+		'<path d="M4 13a8 8 0 0 1 16 0"/><path d="M4 13v4a2 2 0 0 0 2 2h1v-6H5a1 1 0 0 0-1 1Z"/><path d="M20 13v4a2 2 0 0 1-2 2h-1v-6h2a1 1 0 0 1 1 1Z"/><path d="M14 19h-1a2 2 0 0 1-2-2"/>',
+	handshake:
+		'<path d="m2 12 5-4 4 3 3-3 5 4-3 4-2-1-3 3-4-1-3-3Z"/>',
+};
+
+const bg =
+	iconBg === "gold"
+		? "bg-gold-500 text-navy-900"
+		: iconBg === "navy"
+			? "bg-navy-900 text-white"
+			: "text-navy-900";
+
+const iconSize = iconBg === "none" ? 40 : 26;
+---
+
+<div class="flex flex-col items-center gap-3 text-center">
+	<span
+		class={
+			iconBg === "none"
+				? "flex h-10 items-center justify-center"
+				: `flex h-14 w-14 items-center justify-center rounded-full ${bg}`
+		}
+	>
+		<svg
+			viewBox="0 0 24 24"
+			width={iconSize}
+			height={iconSize}
+			fill="none"
+			stroke={iconBg === "none" ? "#101F3C" : "currentColor"}
+			stroke-width="1.75"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			aria-hidden="true"
+			set:html={icons[icon]}
+		/>
+	</span>
+	<p class="font-heading text-sm font-semibold tracking-wide text-navy-900 uppercase">
+		{title}
+	</p>
+	{description && <p class="text-sm text-navy-900/75">{description}</p>}
+</div>

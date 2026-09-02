@@ -1,0 +1,304 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+import Stat from "../components/Stat.astro";
+import FeatureIcon from "../components/FeatureIcon.astro";
+import heroPhoto from "../assets/images/hero-fdcpa-book.jpg";
+import logoText from "../assets/images/logo-text.png";
+import { Image } from "astro:assets";
+
+const learnItems = [
+	"FDCPA Fundamentals & Key Definitions",
+	"Communications with Consumers & Third Parties",
+	"Prohibited Harassment & Abusive Practices",
+	"Unfair, Deceptive & Misleading Conduct",
+	"Validation of Debts & Consumer Rights",
+	"Recordkeeping, Liability & Enforcement",
+	"CFPB Regulation F Requirements",
+	"Scenario-Based Assessments That Build Judgment",
+];
+
+const whyItems = [
+	{
+		icon: "shield-check" as const,
+		title: "Reduce Risk",
+		description:
+			"Recognize conduct that can create complaints, litigation and regulatory exposure.",
+	},
+	{
+		icon: "scale" as const,
+		title: "Improve Judgment",
+		description:
+			"Apply federal requirements to real-world collection situations.",
+	},
+	{
+		icon: "team" as const,
+		title: "Build Consistency",
+		description:
+			"Give staff a common compliance framework for making defensible decisions.",
+	},
+];
+
+const whoItems = [
+	{ icon: "building" as const, title: "Collection Agencies" },
+	{ icon: "bank" as const, title: "Law Firms" },
+	{ icon: "person" as const, title: "Creditors Collecting Consumer Debt" },
+	{ icon: "shield-check" as const, title: "Compliance & Risk Teams" },
+	{ icon: "headset" as const, title: "Call Center & Servicing Personnel" },
+	{ icon: "handshake" as const, title: "Third-Party Vendors" },
+];
+
+const authorCredentials = [
+	{ title: "20+ YEARS", subtitle: "Staff Training" },
+	{ title: "50–100 EMPLOYEES", subtitle: "Managed in Collection Operations" },
+	{ title: "NATIONAL AGENCIES & LAW FIRMS", subtitle: "Audited for Compliance" },
+	{ title: "CEO OF NATIONAL", subtitle: "Collection Law Firm" },
+];
+---
+
+<Layout
+	title="FDCPA Training | FDCPA & Regulation F Compliance Training"
+	description="Comprehensive, scenario-based FDCPA and CFPB Regulation F training that equips collection professionals to make lawful, defensible decisions while reducing compliance and litigation risk."
+>
+	<!-- Hero -->
+	<section class="bg-navy-900 text-white">
+		<div
+			class="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[45fr_29fr_26fr] lg:items-center lg:px-8 lg:py-20"
+		>
+			<div class="text-center lg:text-left">
+				<h1 class="font-heading text-4xl leading-tight font-bold sm:text-5xl">
+					Practical Training.<br />
+					Better Decisions.<br />
+					<span class="text-gold-400">Stronger Compliance.</span>
+				</h1>
+				<div class="my-5 flex items-center justify-center gap-3 lg:justify-start">
+					<span class="h-0.5 w-28 bg-red-500"></span>
+					<span class="text-red-500" aria-hidden="true">&#9733;</span>
+					<span class="h-0.5 w-28 bg-red-500"></span>
+				</div>
+				<p class="mx-auto max-w-md text-white/85 lg:mx-0">
+					Comprehensive, scenario-based FDCPA and CFPB Regulation F training
+					that equips collection professionals to make lawful, defensible
+					decisions while reducing compliance and litigation risk.
+				</p>
+			</div>
+
+			<div>
+				<Image
+					src={heroPhoto}
+					alt="A gavel resting on a bound copy of the FDCPA"
+					width={320}
+					height={320}
+					class="mx-auto aspect-square h-auto w-full max-w-md rounded-full border-4 border-white object-cover lg:mx-0"
+				/>
+			</div>
+
+			<div class="text-center lg:text-left">
+				<Image
+					src={logoText}
+					alt="FDCPA Training — Knowledge. Judgment. Compliance."
+					width={400}
+					height={227}
+					class="mx-auto w-full max-w-sm lg:mx-0"
+				/>
+				<span class="my-4 block h-[3px] w-full" style="background-color: #ce8d0d"></span>
+				<p class="text-center text-[2rem] leading-tight text-white/85">
+					15 U.S.C. &sect;1692<br />
+					&amp; 12 C.F.R. Part 1006
+				</p>
+				<span class="my-4 block h-[3px] w-full" style="background-color: #ce8d0d"></span>
+			</div>
+		</div>
+	</section>
+
+	<!-- Stats -->
+	<section class="bg-surface">
+		<div
+			class="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-4 py-10 sm:px-6 md:grid-cols-3 lg:grid-cols-5 lg:px-8"
+		>
+			<Stat icon="calendar" value="20+ YEARS" label="Training Collection Professionals" />
+			<Stat icon="team" value="55+" label="Risk Management Teams Served" />
+			<Stat icon="grad-cap" value="1,200+" label="Trainees Successfully Completed" />
+			<Stat icon="check-circle" value="97.3%" label="Average Course Pass Rate" />
+			<div class="col-span-2 flex flex-col items-center gap-2 text-center sm:items-start sm:text-left md:col-span-1">
+				<svg
+					viewBox="0 0 24 24"
+					width="30"
+					height="30"
+					fill="none"
+					stroke="#101F3C"
+					stroke-width="1.75"
+					aria-hidden="true"
+				>
+					<path d="M12 3 20 6v6c0 5-3.4 8.4-8 9-4.6-.6-8-4-8-9V6Z" />
+					<path d="m8.5 12 2.5 2.5 4.5-5" stroke="#D99A3D" />
+				</svg>
+				<p class="text-sm font-semibold text-navy-900">
+					PRACTICAL TRAINING.<br />REAL-WORLD SCENARIOS.
+				</p>
+				<p class="text-sm font-bold text-gold-600">BETTER COMPLIANCE.</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Video + What You'll Learn -->
+	<section class="bg-surface">
+		<div
+			class="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 pb-14 sm:px-6 lg:grid-cols-2 lg:px-8"
+		>
+			<div
+				class="relative flex aspect-video flex-col items-center justify-center gap-4 border border-gold-500/40 bg-navy-900 p-6 text-center text-white"
+				role="img"
+				aria-label="Course overview video — coming soon"
+			>
+				<p class="font-heading text-2xl font-bold">FDCPA</p>
+				<p class="font-heading text-2xl font-bold text-gold-400">TRAINING</p>
+				<span
+					class="flex h-16 w-16 items-center justify-center rounded-full border-2 border-white text-white"
+					aria-hidden="true"
+				>
+					<svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
+						<path d="M8 5v14l11-7Z" />
+					</svg>
+				</span>
+				<p class="font-heading text-sm font-semibold tracking-wide uppercase">
+					Course Overview
+				</p>
+				<p class="text-xs text-gold-400">90-Second Video &mdash; Coming Soon</p>
+			</div>
+
+			<div>
+				<h2 class="font-heading text-3xl font-bold text-navy-900">
+					What You&rsquo;ll Learn
+				</h2>
+				<p class="mt-2 text-navy-900/80">
+					A complete learning experience covering all key requirements.
+				</p>
+				<ul class="mt-5 space-y-3">
+					{
+						learnItems.map((item) => (
+							<li class="flex items-start gap-3">
+								<span
+									class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold-500 text-navy-900"
+									aria-hidden="true"
+								>
+									<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+										<path d="m5 12 5 5 9-9" />
+									</svg>
+								</span>
+								<span class="text-navy-900/90">{item}</span>
+							</li>
+						))
+					}
+				</ul>
+				<a
+					href="/course-overview"
+					class="mt-6 inline-flex items-center gap-2 font-heading text-sm font-semibold tracking-wide text-navy-900 uppercase underline underline-offset-4 hover:text-gold-600"
+				>
+					View Detailed Course Overview <span aria-hidden="true">&rarr;</span>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Why This Training Matters -->
+	<section class="bg-white">
+		<div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+			<div class="text-center">
+				<h2 class="font-heading text-3xl font-bold text-navy-900">
+					Why This Training Matters
+				</h2>
+				<span class="mx-auto mt-2 mb-8 block h-px w-24 bg-red-500"></span>
+			</div>
+			<div class="grid gap-10 sm:grid-cols-3">
+				{
+					whyItems.map((item) => (
+						<FeatureIcon
+							icon={item.icon}
+							title={item.title}
+							description={item.description}
+							iconBg="none"
+						/>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<!-- Who This Training Is For -->
+	<section class="bg-surface">
+		<div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+			<div class="text-center">
+				<h2 class="font-heading text-3xl font-bold text-navy-900">
+					Who This Training Is For
+				</h2>
+				<span class="mx-auto mt-2 mb-8 block h-px w-24 bg-red-500"></span>
+			</div>
+			<div class="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-6">
+				{
+					whoItems.map((item) => (
+						<FeatureIcon icon={item.icon} title={item.title} iconBg="none" />
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<!-- Author bio -->
+	<section class="bg-navy-900 text-white">
+		<div
+			class="mx-auto flex max-w-7xl flex-col gap-8 px-4 py-14 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8"
+		>
+			<div class="flex flex-col items-center gap-5 text-center sm:flex-row sm:items-center sm:text-left">
+				<span
+					class="flex h-24 w-24 shrink-0 items-center justify-center rounded-full border-4 border-gold-500 bg-navy-800 font-heading text-2xl font-bold text-gold-400"
+					aria-label="Photo of Gayle Wolfe not yet supplied"
+				>
+					GW
+				</span>
+				<div>
+					<p class="font-heading text-xl font-bold text-gold-400">
+						Gayle Wolfe, Course Author &amp; SME
+					</p>
+					<p class="mt-2 max-w-xl text-white/85">
+						More than 20 years of hands-on experience training and managing
+						collection professionals in corporate recovery operations,
+						national collection agencies, and collection law firms.
+					</p>
+					<p class="mt-2 font-heading text-sm font-semibold tracking-wide text-gold-400 uppercase">
+						Experience. Insight. Results.
+					</p>
+				</div>
+			</div>
+
+			<dl class="grid grid-cols-1 gap-4 border-t border-white/15 pt-6 sm:grid-cols-2 lg:w-80 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-8">
+				{
+					authorCredentials.map((c) => (
+						<div>
+							<dt class="font-heading text-sm font-bold text-gold-400">{c.title}</dt>
+							<dd class="text-sm text-white/80">{c.subtitle}</dd>
+						</div>
+					))
+				}
+			</dl>
+		</div>
+	</section>
+
+	<!-- Closing CTA -->
+	<section class="bg-navy-900 text-white">
+		<div
+			class="mx-auto flex max-w-7xl flex-col items-center gap-6 border-t border-white/10 px-4 py-10 text-center sm:px-6 lg:flex-row lg:justify-between lg:text-left lg:px-8"
+		>
+			<p class="max-w-md text-white/85">
+				Practical training that builds knowledge, strengthens judgment, and
+				drives compliance.
+			</p>
+			<div class="flex flex-col items-center gap-3 sm:flex-row">
+				<Button href="/enroll-today" arrow>Start Training Today</Button>
+				<a href="https://fdcpatraining.com" class="text-gold-400 hover:text-gold-300">
+					FDCPATraining.com
+				</a>
+			</div>
+		</div>
+	</section>
+</Layout>

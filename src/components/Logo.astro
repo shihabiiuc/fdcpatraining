@@ -1,0 +1,21 @@
+---
+interface Props {
+	class?: string;
+}
+
+const { class: className = "h-12" } = Astro.props;
+---
+
+<a
+	href="/"
+	aria-label="FDCPA Training — home"
+	class="inline-flex items-center"
+>
+	<img
+		src="/logo.png"
+		alt="FDCPA Training"
+		width={250}
+		height={100}
+		class={`w-auto ${className}`}
+	/>
+</a>
