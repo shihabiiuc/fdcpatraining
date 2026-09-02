@@ -1,46 +1,23 @@
-# Astro Starter Kit: Basics
+# Shihab — Jamstack Developer — Astro, Jekyll, Gatsby, Next.js
 
-```sh
-npm create astro@latest -- --template basics
-```
+![Shihab Headshot](./public/shihab-headshots.png)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+I helped many clients make websites using the Jamstack architecture and make their websites faster, more secure, and easier to scale.
 
-## 🚀 Project Structure
+[Contact me on Upwork to discuss your project](https://www.upwork.com/freelancers/shihabiiuc?mp_source=share)
 
-Inside of your Astro project, you'll see the following folders and files:
+## Deployment
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+Netlify, Vercel, Workers & Pages (Cloudflare), and Pages (Github)
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+### Version Control
 
-## 🧞 Commands
+Git
 
-All commands are run from the root of the project, from a terminal:
+### Git Platform
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+GitHub and Bitbucket
 
-## 👀 Want to learn more?
+## Need Help with Jamstack Deployment?
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+[Contact me on Upwork to discuss your project](https://www.upwork.com/freelancers/shihabiiuc?mp_source=share)
