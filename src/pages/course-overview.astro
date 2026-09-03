@@ -1,0 +1,551 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+import heroPhoto from "../assets/images/hero-fdcpa-book.jpg";
+import certificatePhoto from "../assets/images/certificate.png";
+import { Image } from "astro:assets";
+
+const videoSrc =
+  "https://player.mux.com/nMsf4hAGiih2x00Gt2wvDFAc7a016u3EAGGd4qBzaJiEg?metadata-video-title=FDCPA+Training+Overview&video-title=FDCPA+Training+Overview";
+
+const differentiators = [
+  {
+    title: "Practical, not theoretical.",
+    description: "Requirements are connected to everyday collection activity.",
+  },
+  {
+    title: "Scenario-based learning.",
+    description: "Participants apply the rules to realistic situations.",
+  },
+  {
+    title: "FDCPA + Regulation F together.",
+    description:
+      "Bureau requirements are taught in context—not treated as an afterthought.",
+  },
+];
+
+const frameworkItems = [
+  { icon: "who", title: "Who", description: "am I communicating with?" },
+  { icon: "what", title: "What", description: "am I communicating?" },
+  { icon: "when", title: "When", description: "am I communicating?" },
+  { icon: "how", title: "How", description: "am I communicating?" },
+  { icon: "should-i", title: "Should I", description: "communicate at all?" },
+];
+
+const experienceSlides = [
+  {
+    tag: "§1692b",
+    title: "Location Information",
+    paragraphs: [["Location only.", "Not debt disclosure."]],
+    icons: ["location-people", "location-house"],
+  },
+  {
+    tag: "§1692d",
+    title: "Harassment / 7-in-7",
+    paragraphs: [
+      ["7 contacts", "in 7 days"],
+      ["Presumption", "of harassment"],
+    ],
+    icons: ["harassment-calendar"],
+  },
+  {
+    tag: "§1692g",
+    title: "Validation of Debts",
+    paragraphs: [["Validation information", "is required"]],
+    icons: ["validation-document"],
+  },
+];
+
+const quizOptions = [
+  { text: "Continue collection calls until payment is made.", correct: false },
+  {
+    text: "Provide the requested validation information before continuing collection activity.",
+    correct: true,
+  },
+  { text: "Refer the account to an attorney.", correct: false },
+  { text: "Leave a voicemail asking the debtor to call back.", correct: false },
+];
+
+const knowledgeItems = [
+  {
+    icon: "self-paced",
+    title: "Self-Paced",
+    subtitle: "Online Training",
+  },
+  {
+    icon: "assessments",
+    title: "Knowledge",
+    subtitle: "Assessments",
+  },
+  {
+    icon: "certificate",
+    title: "Certificate of",
+    subtitle: "Completion",
+  },
+];
+
+const courseCoverItems = [
+  {
+    icon: "communications",
+    title: "Communications",
+    items: ["Consumers", "Third Parties", "Location Information"],
+  },
+  {
+    icon: "collector-conduct",
+    title: "Collector Conduct",
+    items: ["Harassment", "Misrepresentation", "Unfair Practices"],
+  },
+  {
+    icon: "consumer-rights",
+    title: "Consumer Rights",
+    items: ["Validation", "Disputes", "Cease-Collection Requirements"],
+  },
+  {
+    icon: "regulation-f",
+    title: "Regulation F",
+    items: [
+      "Call Frequency",
+      "Electronic Communications",
+      "Limited-Content Messages",
+    ],
+  },
+  {
+    icon: "liability-enforcement",
+    title: "Liability & Enforcement",
+    items: ["Civil Liability", "Regulatory Risk", "Documentation"],
+  },
+  {
+    icon: "real-world-application",
+    title: "Real-World Application",
+    items: ["Scenarios", "Decision-Making", "Compliance Judgment"],
+  },
+];
+---
+
+<Layout
+  title="Course Overview | FDCPA Training"
+  description="See what's inside the Comprehensive FDCPA + Regulation F Training course — practical, scenario-based training for real collection decisions."
+>
+  <!-- Hero -->
+  <section class="bg-surface">
+    <div
+      class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-8 lg:px-8"
+    >
+      <div class="py-[30px]">
+        <h1
+          class="font-heading text-4xl leading-tight font-black tracking-tight text-navy-900 uppercase sm:text-[45px]"
+        >
+          Comprehensive FDCPA + Regulation F Training
+        </h1>
+        <p class="mt-3 font-heading text-xl font-bold text-gold-600">
+          Practical Training for Real Collection Decisions
+        </p>
+        <p class="mt-4 max-w-lg text-navy-900/80">
+          Scenario-based online training covering the FDCPA and CFPB Regulation
+          F&mdash;designed to strengthen compliance knowledge, judgment and
+          day-to-day decision-making.
+        </p>
+
+        <button
+          type="button"
+          id="watch-overview-btn"
+          class="mt-6 inline-flex cursor-pointer items-center gap-3 rounded-[6px] bg-navy-900 py-3 pr-6 pl-3 text-left transition-colors hover:bg-navy-800"
+        >
+          <svg
+            viewBox="0 0 75 75"
+            class="h-11 w-11 shrink-0"
+            aria-hidden="true"
+          >
+            <circle cx="37.5" cy="37.5" r="36.8" fill="#ffffff"></circle>
+            <path fill="#00173a" d="M28.9 22.8v30l23.6-15Z"></path>
+          </svg>
+          <span class="font-heading font-bold text-white uppercase">
+            <span class="block text-base tracking-wide"
+              >Watch the 90-Second Course Overview</span
+            >
+          </span>
+        </button>
+      </div>
+
+      <div class="relative h-64 sm:h-80 lg:h-full">
+        <Image
+          src={heroPhoto}
+          alt="A gavel resting on a bound copy of the FDCPA"
+          width={1048}
+          height={640}
+          class="h-full w-full rounded-[5px] object-cover lg:rounded-none lg:[mask-image:linear-gradient(to_right,transparent,black_18%)] lg:[-webkit-mask-image:linear-gradient(to_right,transparent,black_18%)]"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- What the Course Covers -->
+  <section class="border-b border-[#dbdbdb] bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
+      <div class="flex items-center gap-4 sm:gap-6">
+        <span class="h-px flex-1 bg-gold-500" aria-hidden="true"></span>
+        <h2
+          class="text-center font-heading text-xl font-bold tracking-wide text-navy-900 uppercase sm:text-2xl lg:text-3xl"
+        >
+          What the Course Covers
+        </h2>
+        <span class="h-px flex-1 bg-gold-500" aria-hidden="true"></span>
+      </div>
+
+      <div
+        class="mt-10 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-6 lg:gap-x-0 lg:divide-x lg:divide-navy-900/15"
+      >
+        {
+          courseCoverItems.map((item) => (
+            <div class="flex flex-col items-center gap-3 text-center lg:px-6">
+              <img
+                src={`/icons/course-overview/${item.icon}.svg`}
+                alt=""
+                width="64"
+                height="64"
+                class="h-16 w-16"
+              />
+              <div>
+                <p class="font-heading text-sm font-bold tracking-wide text-navy-900 uppercase sm:text-base">
+                  {item.title}
+                </p>
+                <ul class="mt-2 space-y-1">
+                  {item.items.map((line) => (
+                    <li class="text-sm text-navy-900">{line}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- How This Training Is Different -->
+  <section class="border-b border-[#dbdbdb] bg-surface">
+    <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
+      <div class="flex items-center gap-4 sm:gap-6">
+        <span class="h-px flex-1 bg-gold-500" aria-hidden="true"></span>
+        <h2
+          class="text-center font-heading text-xl font-bold tracking-wide text-navy-900 uppercase sm:text-2xl lg:text-3xl"
+        >
+          How This Training Is Different
+        </h2>
+        <span class="h-px flex-1 bg-gold-500" aria-hidden="true"></span>
+      </div>
+
+      <div
+        class="mt-10 grid gap-10 lg:grid-cols-[35%_65%] lg:items-center lg:gap-12"
+      >
+        <ul class="space-y-6">
+          {
+            differentiators.map((item) => (
+              <li class="flex gap-4">
+                <span class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gold-500">
+                  <svg
+                    viewBox="0 0 16 16"
+                    class="h-3.5 w-3.5"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M3 8.5L6.2 11.5L13 4.5"
+                      stroke="#ffffff"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <div>
+                  <p class="font-heading font-bold text-navy-900">
+                    {item.title}
+                  </p>
+                  <p class="mt-1 text-sm text-navy-900/80">
+                    {item.description}
+                  </p>
+                </div>
+              </li>
+            ))
+          }
+        </ul>
+
+        <div class="rounded-[6px] border border-gold-500 bg-white">
+          <div class="rounded-t-[5px] bg-navy-900 px-6 py-3">
+            <p class="text-center font-heading text-sm font-bold tracking-wide text-white uppercase sm:text-base">
+              The Five Question Compliance Framework
+            </p>
+          </div>
+
+          <div
+            class="grid grid-cols-2 gap-x-4 gap-y-8 px-6 py-8 sm:grid-cols-3 lg:grid-cols-5 lg:divide-x lg:divide-navy-900/15"
+          >
+            {
+              frameworkItems.map((item) => (
+                <div class="flex flex-col items-center gap-2 text-center lg:px-2">
+                  <img
+                    src={`/icons/course-overview/framework/${item.icon}.svg`}
+                    alt=""
+                    width="56"
+                    height="56"
+                    class="h-14 w-14"
+                  />
+                  <p class="font-heading text-sm font-bold tracking-wide text-navy-900 uppercase">
+                    {item.title}
+                  </p>
+                  <p class="text-sm text-navy-900/80">{item.description}</p>
+                </div>
+              ))
+            }
+          </div>
+
+          <div class="flex items-center gap-3 border-t border-gold-500/60 px-6 py-3">
+            <span class="h-px flex-1 bg-gold-500/60" aria-hidden="true"></span>
+            <p class="text-center text-xs font-bold tracking-[0.2em] text-navy-900 uppercase sm:text-sm">
+              Pause &bull; Think &bull; Evaluate &bull; Comply
+            </p>
+            <span class="h-px flex-1 bg-gold-500/60" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Actual Course Experience -->
+  <section class="border-b border-[#dbdbdb] bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
+      <div class="flex items-center gap-4 sm:gap-6">
+        <span class="h-px flex-1 bg-gold-500" aria-hidden="true"></span>
+        <h2
+          class="text-center font-heading text-xl font-bold tracking-wide text-navy-900 uppercase sm:text-2xl lg:text-3xl"
+        >
+          Actual Course Experience
+        </h2>
+        <span class="h-px flex-1 bg-gold-500" aria-hidden="true"></span>
+      </div>
+
+      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_1.9fr]">
+        {
+          experienceSlides.map((slide) => (
+            <div class="flex flex-col overflow-hidden rounded-[6px] border border-navy-900/10 bg-white shadow-sm">
+              <div class="bg-navy-900 px-4 py-2.5">
+                <p class="font-heading text-sm font-bold text-white">
+                  {slide.tag} {slide.title}
+                </p>
+              </div>
+
+              <div class="flex items-center gap-1.5 border-b border-black/5 bg-[#f3f3f2] px-3 py-1.5">
+                <span class="h-2 w-2 rounded-full bg-[#ec6a5e]" />
+                <span class="h-2 w-2 rounded-full bg-[#f4bf4f]" />
+                <span class="h-2 w-2 rounded-full bg-[#61c454]" />
+                <span class="ml-2 h-2 max-w-[70%] flex-1 rounded-full bg-black/10" />
+              </div>
+
+              <div class="flex flex-1 flex-col justify-between gap-6 p-5">
+                <div class="space-y-4">
+                  {slide.paragraphs.map((lines) => (
+                    <p class="font-heading text-base leading-snug font-black text-navy-900 uppercase sm:text-lg">
+                      {lines.map((line) => (
+                        <span class="block">{line}</span>
+                      ))}
+                    </p>
+                  ))}
+                </div>
+                <div class="flex items-end justify-end gap-2">
+                  {slide.icons.map((icon) => (
+                    <img
+                      src={`/icons/course-overview/experience/${icon}.svg`}
+                      alt=""
+                      width="84"
+                      height="84"
+                      class="h-[4.5rem] w-[4.5rem] sm:h-[5.25rem] sm:w-[5.25rem]"
+                    />
+                  ))}
+                </div>
+              </div>
+
+              <div class="h-2 bg-navy-800" />
+            </div>
+          ))
+        }
+
+        <div class="flex flex-col overflow-hidden rounded-[6px] border border-navy-900/10 bg-white shadow-sm">
+          <div class="bg-navy-900 px-4 py-2.5">
+            <p class="text-center font-heading text-sm font-bold text-white uppercase">
+              Actual Course Quiz Content
+            </p>
+          </div>
+
+          <div class="flex flex-1 flex-col gap-4 p-5">
+            <p class="text-sm text-navy-900">
+              You are calling a debtor who has requested validation of the
+              debt in writing. What should you do next?
+            </p>
+            <ul class="space-y-2">
+              {
+                quizOptions.map((option) => (
+                  <li
+                    class:list={[
+                      "flex items-start gap-3 rounded-md px-3 py-2",
+                      option.correct && "bg-[#f6d486]",
+                    ]}
+                  >
+                    <span
+                      class:list={[
+                        "mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full border-2",
+                        option.correct
+                          ? "border-navy-900"
+                          : "border-navy-900/30",
+                      ]}
+                    >
+                      {option.correct && (
+                        <span class="h-2 w-2 rounded-full bg-navy-900" />
+                      )}
+                    </span>
+                    <span class="text-sm text-navy-900">{option.text}</span>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <p class="mt-8 max-w-3xl text-navy-900/80">
+        Scenario-based assessments test the participant&rsquo;s ability to
+        recognize and apply compliant collection practices&mdash;with an
+        explanation provided for each correct answer.
+      </p>
+    </div>
+  </section>
+
+  <!-- Knowledge That Translates -->
+  <section class="bg-navy-900">
+    <div
+      class="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[35%_65%] lg:items-center lg:gap-14 lg:px-8 lg:py-20"
+    >
+      <div class="mx-auto w-full max-w-md lg:mx-0">
+        <Image
+          src={certificatePhoto}
+          alt="Sample FDCPA Training certificate of completion"
+          width={780}
+          height={505}
+          class="w-full rounded-[5px] shadow-xl"
+        />
+      </div>
+
+      <div>
+        <h2
+          class="font-heading text-2xl leading-tight font-black tracking-tight text-gold-500 uppercase sm:text-3xl lg:text-4xl"
+        >
+          Knowledge That Translates Into Better Decisions.
+        </h2>
+
+        <div
+          class="mt-8 flex flex-col gap-6 sm:flex-row sm:items-center sm:divide-x sm:divide-white/20"
+        >
+          {
+            knowledgeItems.map((item) => (
+              <div class="flex items-center gap-3 sm:px-6 sm:first:pl-0">
+                <img
+                  src={`/icons/course-overview/knowledge/${item.icon}.png`}
+                  alt=""
+                  width="40"
+                  height="40"
+                  class="h-10 w-10 shrink-0"
+                />
+                <p class="font-heading text-sm font-bold tracking-wide text-white uppercase">
+                  <span class="block">{item.title}</span>
+                  <span class="block">{item.subtitle}</span>
+                </p>
+              </div>
+            ))
+          }
+        </div>
+
+        <div class="mt-10">
+          <Button href="/pricing" variant="outline-gold" arrow>
+            View Pricing &amp; Enrollment
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video lightbox -->
+  <div
+    id="video-lightbox"
+    class="fixed inset-0 z-[100] hidden items-center justify-center bg-navy-950/90 p-4"
+    role="dialog"
+    aria-modal="true"
+    aria-label="FDCPA Training Overview video"
+    aria-hidden="true"
+  >
+    <div class="relative w-full max-w-3xl">
+      <button
+        type="button"
+        id="video-lightbox-close"
+        aria-label="Close video"
+        class="absolute -top-10 right-0 text-2xl leading-none text-white hover:text-gold-400"
+      >
+        &#10005;
+      </button>
+      <div
+        id="video-lightbox-frame"
+        class="aspect-video w-full overflow-hidden rounded-[5px] bg-black"
+      >
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  const videoSrc =
+    "https://player.mux.com/nMsf4hAGiih2x00Gt2wvDFAc7a016u3EAGGd4qBzaJiEg?metadata-video-title=FDCPA+Training+Overview&video-title=FDCPA+Training+Overview";
+
+  const openBtn = document.getElementById("watch-overview-btn");
+  const lightbox = document.getElementById("video-lightbox");
+  const closeBtn = document.getElementById("video-lightbox-close");
+  const frame = document.getElementById("video-lightbox-frame");
+
+  function openLightbox() {
+    if (!lightbox || !frame) return;
+    const iframe = document.createElement("iframe");
+    iframe.src = videoSrc;
+    iframe.style.cssText =
+      "width: 100%; height: 100%; border: none; display: block;";
+    iframe.allow =
+      "accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;";
+    iframe.allowFullscreen = true;
+    iframe.title = "FDCPA Training Overview";
+    frame.replaceChildren(iframe);
+
+    lightbox.classList.remove("hidden");
+    lightbox.classList.add("flex");
+    lightbox.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    closeBtn?.focus();
+  }
+
+  function closeLightbox() {
+    if (!lightbox || !frame) return;
+    lightbox.classList.add("hidden");
+    lightbox.classList.remove("flex");
+    lightbox.setAttribute("aria-hidden", "true");
+    frame.replaceChildren();
+    document.body.style.overflow = "";
+    openBtn?.focus();
+  }
+
+  openBtn?.addEventListener("click", openLightbox);
+  closeBtn?.addEventListener("click", closeLightbox);
+  lightbox?.addEventListener("click", (event) => {
+    if (event.target === lightbox) closeLightbox();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !lightbox?.classList.contains("hidden")) {
+      closeLightbox();
+    }
+  });
+</script>

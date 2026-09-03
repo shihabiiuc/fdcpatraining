@@ -1,0 +1,398 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+import heroPhoto from "../assets/images/hero_pricing.png";
+import { Image } from "astro:assets";
+
+const flexibleAssignment = {
+  title: "Flexible Assignment",
+  description: "Training slots remain available until assigned to a staff member.",
+};
+
+const packages = [
+  {
+    icon: "individual",
+    name: "Individual",
+    slots: "1 Training Slot",
+    audience: "For individual professionals",
+    price: "$89",
+    priceUnit: "per person",
+    features: [
+      "Complete FDCPA + Regulation F Course",
+      "Scenario-Based Assessments",
+      "Correct Answer Explanations",
+      "Certificate of Completion",
+      "Self-Paced  •  Online Access",
+    ],
+  },
+  {
+    icon: "team",
+    name: "Team",
+    slots: "2 to 4 Training Slots",
+    audience: "Perfect for small teams",
+    price: "$299",
+    priceUnit: "per group",
+    features: [
+      "Everything in Individual",
+      "2 to 4 Training Slots",
+      flexibleAssignment,
+      "Admin Access & Progress Tracking",
+    ],
+  },
+  {
+    icon: "team-plus",
+    name: "Team Plus",
+    slots: "5 to 10 Training Slots",
+    audience: "Ideal for growing teams",
+    price: "$649",
+    priceUnit: "per group",
+    features: [
+      "Everything in Team",
+      "5 to 10 Training Slots",
+      flexibleAssignment,
+      "Advanced Admin & Reporting",
+      "Priority Support",
+    ],
+  },
+  {
+    icon: "organization",
+    name: "Organization",
+    slots: "11 to 20 Training Slots",
+    audience: "Great for larger organizations",
+    price: "$1,199",
+    priceUnit: "per group",
+    features: [
+      "Everything in Team Plus",
+      "11 to 20 Training Slots",
+      flexibleAssignment,
+      "Advanced Admin & Reporting",
+      "Priority Support",
+    ],
+  },
+];
+
+const trainingIncludes = [
+  {
+    icon: "course",
+    title: "Complete FDCPA + Regulation F Course",
+    description: "Comprehensive coverage of the FDCPA and CFPB Regulation F.",
+  },
+  {
+    icon: "assessments",
+    title: "Scenario-Based Assessments",
+    description: "Realistic situations that test knowledge and compliance judgment.",
+  },
+  {
+    icon: "explanations",
+    title: "Correct Answer Explanations",
+    description: "Learn why the correct answer is compliant.",
+  },
+  {
+    icon: "certificate",
+    title: "Certificate of Completion",
+    description: "Awarded upon successful completion of the course and assessments.",
+  },
+  {
+    icon: "self-paced",
+    title: "Online • Self-Paced Access",
+    description: "Train when and where it's convenient for you.",
+  },
+];
+
+const supportItems = [
+  {
+    icon: "secure-enrollment",
+    title: "Secure Enrollment",
+    description: "Your information and payment are protected with SSL encryption and secure processing.",
+  },
+  {
+    icon: "instant-access",
+    title: "Instant Access",
+    description: "Access instructions are provided immediately after enrollment and payment.",
+  },
+  {
+    icon: "support",
+    title: "Support",
+    description: "Our support team is here to help you get the training your team needs.",
+  },
+];
+---
+
+<Layout
+  title="Pricing & Enroll | FDCPA Training"
+  description="Simple, flexible pricing for FDCPA + Regulation F training. Purchase training slots today and assign them to your team when you're ready."
+>
+  <!-- Hero -->
+  <section class="bg-white">
+    <div
+      class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-8 lg:px-8"
+    >
+      <div class="flex flex-col justify-center py-[30px]">
+        <h1
+          class="font-heading text-4xl leading-tight font-black tracking-tight text-navy-900 uppercase sm:text-[45px]"
+        >
+          Pricing
+        </h1>
+        <p class="mt-3 font-heading text-xl font-bold text-gold-600">
+          Simple pricing. Flexible training slots.
+        </p>
+        <p class="mt-4 max-w-lg text-navy-900/80">
+          Choose the training option that fits your team. Purchase today and
+          assign training slots to staff when you&rsquo;re ready.
+        </p>
+      </div>
+
+      <div class="relative h-64 sm:h-80 lg:h-full">
+        <Image
+          src={heroPhoto}
+          alt="A copy of the FDCPA Compliance book beside a pen, with scales of justice in the background"
+          width={1048}
+          height={640}
+          class="h-full w-full rounded-[5px] object-cover lg:rounded-none lg:[mask-image:linear-gradient(to_right,transparent,black_18%)] lg:[-webkit-mask-image:linear-gradient(to_right,transparent,black_18%)]"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Training Packages -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 pt-[30px] pb-[30px] sm:px-6 lg:px-8">
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {
+          packages.map((pkg) => (
+            <div class="relative flex flex-col rounded-[6px] border border-navy-900/10 bg-white shadow-sm">
+              <img
+                src={`/icons/pricing/${pkg.icon}.svg`}
+                alt=""
+                width="64"
+                height="64"
+                class="absolute top-0 left-1/2 h-16 w-16 -translate-x-1/2 -translate-y-[35%]"
+              />
+              <div class="flex flex-col items-center gap-3 rounded-t-[6px] bg-navy-900 px-4 pt-[52px] pb-5">
+                <p class="font-heading text-lg font-bold tracking-wide text-white uppercase">
+                  {pkg.name}
+                </p>
+              </div>
+
+              <div class="flex flex-1 flex-col px-6 py-6">
+                <p class="text-center font-heading font-bold text-navy-900">
+                  {pkg.slots}
+                </p>
+                <p class="text-center text-sm text-navy-900/80">
+                  {pkg.audience}
+                </p>
+
+                <span class="mx-auto mt-4 h-px w-full bg-gold-500" />
+
+                <div class="mt-4 text-center">
+                  <span class="font-heading text-4xl font-black text-navy-900">
+                    {pkg.price}
+                  </span>
+                  <p class="mt-1 font-heading text-sm font-bold text-navy-900">
+                    USD
+                  </p>
+                  <p class="text-sm text-navy-900/80">{pkg.priceUnit}</p>
+                </div>
+
+                <ul class="mt-5 space-y-3">
+                  {pkg.features.map((feature) => (
+                    <li class="flex items-start gap-2.5">
+                      <span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold-500">
+                        <svg
+                          viewBox="0 0 16 16"
+                          class="h-3 w-3"
+                          fill="none"
+                          aria-hidden="true"
+                        >
+                          <path
+                            d="M3 8.5L6.2 11.5L13 4.5"
+                            stroke="#ffffff"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </span>
+                      {typeof feature === "string" ? (
+                        <span class="text-sm text-navy-900">{feature}</span>
+                      ) : (
+                        <span class="text-sm text-navy-900">
+                          <span class="block font-bold">{feature.title}</span>
+                          <span class="block text-navy-900/80">
+                            {feature.description}
+                          </span>
+                        </span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      <div
+        class="mt-[30px] flex flex-col gap-6 rounded-[8px] bg-navy-900 p-6 sm:p-8 lg:flex-row lg:items-center lg:justify-between lg:gap-8"
+      >
+        <div class="flex items-start gap-4 sm:items-center">
+          <img
+            src="/icons/pricing/calendar.svg"
+            alt=""
+            width="56"
+            height="56"
+            class="h-12 w-12 shrink-0 sm:h-14 sm:w-14"
+          />
+          <div>
+            <p class="font-heading text-base font-bold tracking-wide text-gold-500 uppercase sm:text-lg">
+              Training Slots Remain Available Until Assigned.
+            </p>
+            <p class="mt-1 text-white/90">
+              Buy now. Assign later. Flexible and convenient.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="flex flex-col items-start gap-4 border-t border-white/15 pt-6 sm:flex-row sm:items-center lg:border-t-0 lg:border-l lg:pt-0 lg:pl-8"
+        >
+          <div>
+            <p class="font-heading font-bold text-white">
+              Need more than 20 training slots?
+            </p>
+            <p class="mt-1 text-sm text-white/70">
+              Contact us for organizational pricing and custom training
+              solutions.
+            </p>
+          </div>
+          <Button
+            href="/contact"
+            variant="primary"
+            class="shrink-0 rounded-[5px]"
+          >
+            Contact Us
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Every Training Option Includes -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 pb-[30px] sm:px-6 lg:px-8">
+      <div
+        class="rounded-[8px] border border-navy-900/10 bg-surface px-6 py-10 sm:px-10"
+      >
+        <div class="flex items-center gap-4 sm:gap-6">
+          <span class="h-px flex-1 bg-gold-500" aria-hidden="true"></span>
+          <h2
+            class="text-center font-heading text-lg font-bold tracking-wide text-navy-900 uppercase sm:text-xl lg:text-2xl"
+          >
+            Every Training Option Includes
+          </h2>
+          <span class="h-px flex-1 bg-gold-500" aria-hidden="true"></span>
+        </div>
+
+        <div
+          class="mt-10 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-5 lg:gap-x-0 lg:divide-x lg:divide-navy-900/15"
+        >
+          {
+            trainingIncludes.map((item) => (
+              <div class="flex flex-col items-center gap-3 text-center lg:px-6">
+                <img
+                  src={`/icons/pricing/training-option/${item.icon}.svg`}
+                  alt=""
+                  width="56"
+                  height="56"
+                  class="h-12 w-12 sm:h-14 sm:w-14"
+                />
+                <p class="font-heading text-sm font-bold tracking-wide text-navy-900 uppercase sm:text-base">
+                  {item.title}
+                </p>
+                <p class="text-sm text-navy-900/70">{item.description}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Secure, Instant, Support -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 pb-[30px] sm:px-6 lg:px-8">
+      <div
+        class="rounded-[8px] border border-navy-900/10 bg-surface px-6 py-8 sm:px-10"
+      >
+        <div
+          class="grid gap-8 sm:grid-cols-3 sm:divide-x sm:divide-navy-900/15"
+        >
+          {
+            supportItems.map((item) => (
+              <div class="flex items-start gap-4 sm:px-6 sm:first:pl-0">
+                <img
+                  src={`/icons/pricing/support/${item.icon}.svg`}
+                  alt=""
+                  width="48"
+                  height="48"
+                  class="h-10 w-10 shrink-0"
+                />
+                <div>
+                  <p class="font-heading text-sm font-bold tracking-wide text-navy-900 uppercase">
+                    {item.title}
+                  </p>
+                  <p class="mt-1 text-sm text-navy-900/70">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Practical Training. Real Results. -->
+  <section class="bg-navy-900">
+    <div
+      class="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8"
+    >
+      <div class="flex items-center gap-4">
+        <img
+          src="/icons/pricing/shieldcheck.svg"
+          alt=""
+          width="75"
+          height="75"
+          class="h-[75px] w-[75px] shrink-0"
+        />
+        <div>
+          <p class="font-heading text-[22px] font-bold tracking-wide text-gold-500 uppercase">
+            Practical Training. Real Results.
+          </p>
+          <p class="mt-1 max-w-[560px] text-white/90">
+            Over 1,200 collection professionals across 50 organizations have
+            completed the course with a 97.3% pass rate.
+          </p>
+        </div>
+      </div>
+
+      <Button
+        href="/course-overview"
+        variant="outline-gold"
+        arrow
+        class="shrink-0"
+      >
+        View Course Overview
+      </Button>
+    </div>
+  </section>
+</Layout>
+
+<style is:global>
+  #main-content {
+    --color-gold-400: #e19525;
+    --color-gold-500: #e19525;
+    --color-gold-600: #e19525;
+  }
+</style>
