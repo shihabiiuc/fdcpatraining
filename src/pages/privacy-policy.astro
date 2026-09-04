@@ -1,0 +1,138 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const sections = [
+  {
+    icon: "user",
+    title: "Information We Collect",
+    body: "When you contact us through this website, we may receive the basic information you provide, such as your name, email address, telephone number, organization name, and the nature of your inquiry. The website may also receive routine technical information associated with normal website operation.",
+  },
+  {
+    icon: "chat",
+    title: "How Information Is Used",
+    body: "Information we receive is used only to respond to inquiries, assist with enrollment, provide training-related support, and maintain and improve the website.",
+  },
+  {
+    icon: "credit-card",
+    title: "Payments",
+    body: "Course payments are processed through PayPal. FDCPA Training does not collect or store credit-card or PayPal account credentials.",
+  },
+  {
+    icon: "graduation-hat",
+    title: "Course Access",
+    body: "Course access is provided through Trakstar Learn. Information necessary to establish and administer training accounts may be provided to Trakstar Learn.",
+  },
+  {
+    icon: "users",
+    title: "Sharing of Information",
+    body: "FDCPA Training does not sell or rent personal information. Information may be shared only with service providers as necessary to operate the website, process enrollment, and deliver training.",
+  },
+  {
+    icon: "globe",
+    title: "Website Technology & Links",
+    body: "This website may use cookies or similar technologies for website operation, security, and performance. Third-party services linked from this website operate under their own privacy policies.",
+  },
+  {
+    icon: "shield",
+    title: "Security & Questions",
+    body: "FDCPA Training takes reasonable measures to protect information. Questions about this Privacy Policy may be directed to us using the contact information below.",
+  },
+];
+---
+
+<Layout
+  title="Privacy Policy | FDCPA Training"
+  description="FDCPA Training respects your privacy. This Privacy Policy explains the limited information collected through FDCPATraining.com and how that information is used."
+>
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
+      <div class="flex items-start gap-5">
+        <img
+          src="/icons/privacy-policy/lock.svg"
+          alt=""
+          width="64"
+          height="64"
+          class="h-14 w-14 shrink-0 sm:h-16 sm:w-16"
+        />
+        <div>
+          <h1
+            class="font-heading text-3xl font-black tracking-tight text-navy-900 uppercase sm:text-4xl"
+          >
+            Privacy Policy
+          </h1>
+          <p class="mt-3 text-navy-900/80">
+            FDCPA Training respects your privacy. This Privacy Policy explains
+            the limited information collected through FDCPATraining.com and
+            how that information is used.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-10 flex flex-col gap-8">
+        {
+          sections.map((item) => (
+            <div class="flex items-start gap-5">
+              <img
+                src={`/icons/privacy-policy/${item.icon}.svg`}
+                alt=""
+                width="64"
+                height="64"
+                class="h-14 w-14 shrink-0"
+              />
+              <div>
+                <h2 class="font-heading text-lg font-bold tracking-wide text-navy-900 uppercase">
+                  {item.title}
+                </h2>
+                <p class="mt-1 text-navy-900/80">{item.body}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      <div
+        class="mt-12 flex flex-col items-start gap-4 border-t border-[#e69c24] pt-8 sm:flex-row sm:items-center sm:justify-center sm:gap-10 sm:divide-x sm:divide-[#e69c24]"
+      >
+        <a
+          href="mailto:info@fdcpatraining.com"
+          class="flex items-center gap-2 text-sm font-semibold text-navy-900 hover:text-gold-600 sm:pr-10"
+        >
+          <img
+            src="/icons/privacy-policy/envelop.svg"
+            alt=""
+            width="32"
+            height="32"
+            class="h-8 w-8 shrink-0"
+          />
+          info@fdcpatraining.com
+        </a>
+        <a
+          href="tel:+15125228005"
+          class="flex items-center gap-2 text-sm font-semibold text-navy-900 hover:text-gold-600 sm:px-10"
+        >
+          <img
+            src="/icons/privacy-policy/phone.svg"
+            alt=""
+            width="32"
+            height="32"
+            class="h-8 w-8 shrink-0"
+          />
+          512-522-8005
+        </a>
+        <a
+          href="https://www.fdcpatraining.com/"
+          class="flex items-center gap-2 text-sm font-semibold text-navy-900 hover:text-gold-600 sm:pl-10"
+        >
+          <img
+            src="/icons/privacy-policy/globe-strong.svg"
+            alt=""
+            width="32"
+            height="32"
+            class="h-8 w-8 shrink-0"
+          />
+          FDCPATraining.com
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -136,7 +136,7 @@ const supportItems = [
         <p class="mt-3 font-heading text-xl font-bold text-gold-600">
           Simple pricing. Flexible training slots.
         </p>
-        <p class="mt-4 max-w-lg text-navy-900/80">
+        <p class="mt-4 max-w-lg text-[#011a47]">
           Choose the training option that fits your team. Purchase today and
           assign training slots to staff when you&rsquo;re ready.
         </p>
@@ -235,7 +235,7 @@ const supportItems = [
       <div
         class="mt-[30px] flex flex-col gap-6 rounded-[8px] bg-navy-900 p-6 sm:p-8 lg:flex-row lg:items-center lg:justify-between lg:gap-8"
       >
-        <div class="flex items-start gap-4 sm:items-center">
+        <div class="flex items-start gap-4 sm:items-center lg:w-3/5">
           <img
             src="/icons/pricing/calendar.svg"
             alt=""
@@ -254,7 +254,7 @@ const supportItems = [
         </div>
 
         <div
-          class="flex flex-col items-start gap-4 border-t border-white/15 pt-6 sm:flex-row sm:items-center lg:border-t-0 lg:border-l lg:pt-0 lg:pl-8"
+          class="flex flex-col items-start gap-4 border-t border-white/15 pt-6 sm:flex-row sm:items-center lg:w-2/5 lg:border-t-0 lg:border-l lg:border-l-[#e69c24] lg:pt-0 lg:pl-8"
         >
           <div>
             <p class="font-heading font-bold text-white">
@@ -268,7 +268,7 @@ const supportItems = [
           <Button
             href="/contact"
             variant="primary"
-            class="shrink-0 rounded-[5px]"
+            class="shrink-0 rounded-[5px] font-extrabold! text-[#011a47]!"
           >
             Contact Us
           </Button>
@@ -286,7 +286,7 @@ const supportItems = [
         <div class="flex items-center gap-4 sm:gap-6">
           <span class="h-px flex-1 bg-gold-500" aria-hidden="true"></span>
           <h2
-            class="text-center font-heading text-lg font-bold tracking-wide text-navy-900 uppercase sm:text-xl lg:text-2xl"
+            class="text-center font-heading text-lg font-bold tracking-wide text-[#011a47] uppercase sm:text-xl lg:text-2xl"
           >
             Every Training Option Includes
           </h2>
@@ -294,7 +294,7 @@ const supportItems = [
         </div>
 
         <div
-          class="mt-10 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-5 lg:gap-x-0 lg:divide-x lg:divide-navy-900/15"
+          class="mt-10 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-5 lg:gap-x-0 lg:divide-x lg:divide-navy-900/15"
         >
           {
             trainingIncludes.map((item) => (
@@ -306,10 +306,10 @@ const supportItems = [
                   height="56"
                   class="h-12 w-12 sm:h-14 sm:w-14"
                 />
-                <p class="font-heading text-sm font-bold tracking-wide text-navy-900 uppercase sm:text-base">
+                <p class="font-heading text-sm font-bold tracking-wide text-[#011a47] uppercase sm:text-base">
                   {item.title}
                 </p>
-                <p class="text-sm text-navy-900/70">{item.description}</p>
+                <p class="text-sm text-[#011a47]">{item.description}</p>
               </div>
             ))
           }
@@ -338,10 +338,10 @@ const supportItems = [
                   class="h-10 w-10 shrink-0"
                 />
                 <div>
-                  <p class="font-heading text-sm font-bold tracking-wide text-navy-900 uppercase">
+                  <p class="font-heading text-sm font-bold tracking-wide text-[#011a47] uppercase">
                     {item.title}
                   </p>
-                  <p class="mt-1 text-sm text-navy-900/70">
+                  <p class="mt-1 text-sm text-[#011a47]">
                     {item.description}
                   </p>
                 </div>
@@ -381,7 +381,8 @@ const supportItems = [
         href="/course-overview"
         variant="outline-gold"
         arrow
-        class="shrink-0"
+        arrowStrokeWidth={3}
+        class="shrink-0 font-extrabold! text-[1.2rem]!"
       >
         View Course Overview
       </Button>

@@ -1,0 +1,121 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const sections = [
+  {
+    icon: "openbook",
+    title: "Educational Purpose",
+    body: "FDCPA Training provides educational information concerning the FDCPA and related compliance requirements. The training is not legal advice and does not replace advice from qualified legal counsel.",
+  },
+  {
+    icon: "copyright",
+    title: "Ownership of Content",
+    body: "All FDCPA Training course and website materials are copyrighted and may not be copied, reproduced, distributed, shared, or used to create other training materials without written permission.",
+  },
+  {
+    icon: "users",
+    title: "Course Access",
+    body: "Course access is limited to the number of participants purchased and may not be shared with unauthorized users.",
+  },
+  {
+    icon: "shield",
+    title: "No Guarantee of Compliance",
+    body: "FDCPA Training does not guarantee that completion of the course will ensure compliance with applicable laws or regulations.",
+  },
+];
+---
+
+<Layout
+  title="Terms of Use | FDCPA Training"
+  description="Terms of Use for FDCPATraining.com, including educational purpose, ownership of content, course access, and compliance disclaimers."
+>
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
+      <div class="flex items-start gap-5">
+        <img
+          src="/icons/terms-of-use/scale.svg"
+          alt=""
+          width="64"
+          height="64"
+          class="h-14 w-14 shrink-0 sm:h-16 sm:w-16"
+        />
+        <h1
+          class="font-heading text-3xl font-black tracking-tight text-navy-900 uppercase sm:text-4xl"
+        >
+          Terms of Use
+        </h1>
+      </div>
+
+      <div class="mt-10 flex flex-col gap-8">
+        {
+          sections.map((item, index) => (
+            <>
+              {index > 0 && (
+                <span class="h-px w-full bg-[#e69c24]" aria-hidden="true" />
+              )}
+              <div class="flex items-start gap-5">
+                <img
+                  src={`/icons/terms-of-use/${item.icon}.svg`}
+                  alt=""
+                  width="64"
+                  height="64"
+                  class="h-14 w-14 shrink-0"
+                />
+                <div>
+                  <h2 class="font-heading text-lg font-bold tracking-wide text-navy-900 uppercase">
+                    {item.title}
+                  </h2>
+                  <p class="mt-1 text-navy-900/80">{item.body}</p>
+                </div>
+              </div>
+            </>
+          ))
+        }
+      </div>
+
+      <div
+        class="mt-12 flex flex-col items-start gap-4 border-t border-[#e69c24] pt-8 sm:flex-row sm:items-center sm:justify-center sm:gap-10 sm:divide-x sm:divide-[#e69c24]"
+      >
+        <a
+          href="mailto:info@fdcpatraining.com"
+          class="flex items-center gap-2 text-sm font-semibold text-navy-900 hover:text-gold-600 sm:pr-10"
+        >
+          <img
+            src="/icons/privacy-policy/envelop.svg"
+            alt=""
+            width="32"
+            height="32"
+            class="h-8 w-8 shrink-0"
+          />
+          info@fdcpatraining.com
+        </a>
+        <a
+          href="tel:+15125228005"
+          class="flex items-center gap-2 text-sm font-semibold text-navy-900 hover:text-gold-600 sm:px-10"
+        >
+          <img
+            src="/icons/privacy-policy/phone.svg"
+            alt=""
+            width="32"
+            height="32"
+            class="h-8 w-8 shrink-0"
+          />
+          512-522-8005
+        </a>
+        <a
+          href="https://www.fdcpatraining.com/"
+          class="flex items-center gap-2 text-sm font-semibold text-navy-900 hover:text-gold-600 sm:pl-10"
+        >
+          <img
+            src="/icons/privacy-policy/globe-strong.svg"
+            alt=""
+            width="32"
+            height="32"
+            class="h-8 w-8 shrink-0"
+          />
+          FDCPATraining.com
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

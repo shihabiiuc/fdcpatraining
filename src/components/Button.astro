@@ -4,6 +4,7 @@ interface Props {
 	variant?: "primary" | "outline" | "outline-light" | "outline-gold" | "glow";
 	class?: string;
 	arrow?: boolean;
+	arrowStrokeWidth?: number;
 	target?: "_blank";
 }
 
@@ -12,6 +13,7 @@ const {
 	variant = "primary",
 	class: className = "",
 	arrow = false,
+	arrowStrokeWidth = 2,
 	target,
 } = Astro.props;
 
@@ -46,7 +48,7 @@ const rel = target === "_blank" ? "noopener noreferrer" : undefined;
 				viewBox="0 0 24 24"
 				fill="none"
 				stroke="currentColor"
-				stroke-width="2"
+				stroke-width={arrowStrokeWidth}
 				stroke-linecap="round"
 				stroke-linejoin="round"
 				aria-hidden="true"

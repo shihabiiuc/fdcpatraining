@@ -1,0 +1,270 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const aboutTraining = [
+  {
+    question: "What makes this FDCPA training different from other online courses?",
+    answer: [
+      "Most online FDCPA training is delivered through video - convenient for the provider, but research consistently shows that passive video viewing produces only 5-10% information retention. Our training is text-based, structured around all 18 sections of the FDCPA, and reinforced with quizzes, case problems, and real collection scenarios for each section. You read, you apply, you test, you retain. This is how professionals actually learn complex regulatory material.",
+      "The course was developed by a subject matter expert with 25 years of hands-on collection experience at the IRS, Citi Bank Credit Card Services, Bank of America, and the collection law firm Patti Bass & Associates. The training reflects real-world collection situations - not theoretical overviews.",
+    ],
+  },
+  {
+    question: "Is this training text-based or video-based?",
+    answer: [
+      "Text-based. The course material is presented in written form, organized by FDCPA section, with quizzes following each section. This format allows participants to study at their own pace, revisit specific sections as needed, and achieve higher retention than passive video viewing. The material is available online 24/7 throughout the access period.",
+    ],
+  },
+  {
+    question: "How long has this training been available?",
+    answer: [
+      "FDCPA Training has been online for over 15 years, during which time the course has been used by law firms, collection agencies, debt buyers, corporate collection departments, and financial service companies. The material is continuously updated to reflect changes in the law, including the CFPB Debt Collection Rule (Regulation F).",
+    ],
+  },
+  {
+    question: "Who is this training designed for?",
+    answer: [
+      "Law firms engaged in consumer collections; third-party collection agencies; creditors with internal collection personnel; debt buyers; compliance officers and managers; and call center and servicing staff involved in debt collection communications.",
+    ],
+  },
+  {
+    question: "Does this training cover Regulation F (the CFPB Debt Collection Rule)?",
+    answer: [
+      "Yes. The training covers the Consumer Financial Protection Bureau's Debt Collection Rule (Regulation F), effective November 30, 2021. This includes requirements governing modern communication methods such as email, text messaging, voicemail, and social media, as well as call frequency limitations and limited-content message rules. Regulation F content is integrated throughout the course alongside the corresponding FDCPA sections.",
+    ],
+  },
+];
+
+const modules = [
+  { icon: "module-1", title: "Module 1", sections: "Sections (a-d)" },
+  { icon: "module-2", title: "Module 2", sections: "Sections (e-g)" },
+  { icon: "module-3", title: "Module 3", sections: "Sections (h-o)" },
+];
+---
+
+<Layout
+  title="FDCPA Training FAQ | Course, Enrollment, Access & Certificates"
+  description="Answers to common questions about FDCPA Training course content, Regulation F, enrollment, access, certificates, reporting, pricing and organizational training."
+>
+  <!-- Page Header -->
+  <section class="bg-white">
+    <div
+      class="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-10 sm:flex-row sm:items-center sm:px-6 lg:px-8"
+    >
+      <a href="/" aria-label="FDCPA Training — home" class="shrink-0">
+        <img
+          src="/logo-secondary.png"
+          alt="FDCPA Training — Knowledge. Judgment. Compliance."
+          width="330"
+          height="120"
+          class="h-20 w-auto sm:h-24"
+        />
+      </a>
+      <span
+        class="hidden h-16 w-px shrink-0 bg-gold-500 sm:block sm:h-20"
+        aria-hidden="true"
+      ></span>
+      <div>
+        <h1
+          class="font-heading text-3xl leading-tight font-black tracking-tight text-navy-900 uppercase sm:text-4xl"
+        >
+          Frequently Asked Questions
+        </h1>
+        <p class="mt-2 max-w-xl text-navy-900/70 italic">
+          Comprehensive course, enrollment, access, certificate, reporting,
+          and organizational FAQ
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About the Training -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center gap-4">
+        <img
+          src="/icons/faq/info.svg"
+          alt=""
+          width="48"
+          height="48"
+          class="h-11 w-11 shrink-0 sm:h-12 sm:w-12"
+        />
+        <h2
+          class="font-heading text-xl font-bold tracking-wide text-navy-900 uppercase sm:text-2xl"
+        >
+          About the Training
+        </h2>
+        <span class="h-px flex-1 bg-gold-500" aria-hidden="true"></span>
+      </div>
+
+      <div class="mt-8 space-y-8 pb-4">
+        {
+          aboutTraining.map((item) => (
+            <div>
+              <div class="flex items-start gap-3">
+                <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-[6px] bg-gold-500 font-heading font-bold text-white">
+                  Q
+                </span>
+                <p class="pt-0.5 font-heading text-base font-bold text-navy-900 sm:text-lg">
+                  {item.question}
+                </p>
+              </div>
+              <div class="mt-2 flex items-start gap-3">
+                <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-[6px] bg-navy-900 font-heading font-bold text-white">
+                  A
+                </span>
+                <div class="space-y-3 pt-0.5">
+                  {item.answer.map((paragraph) => (
+                    <p class="text-navy-900/80">{paragraph}</p>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Course Content & Structure -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
+      <div class="flex items-center gap-4">
+        <img
+          src="/icons/faq/course-content.svg"
+          alt=""
+          width="48"
+          height="48"
+          class="h-11 w-11 shrink-0 sm:h-12 sm:w-12"
+        />
+        <h2
+          class="font-heading text-xl font-bold tracking-wide text-navy-900 uppercase sm:text-2xl"
+        >
+          Course Content &amp; Structure
+        </h2>
+        <span class="h-px flex-1 bg-gold-500" aria-hidden="true"></span>
+      </div>
+
+      <div class="mt-8">
+        <div class="flex items-start gap-3">
+          <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-[6px] bg-gold-500 font-heading font-bold text-white">
+            Q
+          </span>
+          <p class="pt-0.5 font-heading text-base font-bold text-navy-900 sm:text-lg">
+            What does the course cover?
+          </p>
+        </div>
+        <div class="mt-2 flex items-start gap-3">
+          <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-[6px] bg-navy-900 font-heading font-bold text-white">
+            A
+          </span>
+          <p class="pt-0.5 text-navy-900/80">
+            The training provides a comprehensive review of the Fair Debt
+            Collection Practices Act (15 U.S.C. Section 1692 et seq.),
+            covering all 18 sections of the law. The course is divided into
+            three structured modules:
+          </p>
+        </div>
+
+        <div class="mt-6 grid gap-4 sm:grid-cols-3">
+          {
+            modules.map((mod) => (
+              <div class="flex items-center gap-3 rounded-[6px] border border-navy-900/10 bg-surface px-4 py-3">
+                <img
+                  src={`/icons/faq/${mod.icon}.svg`}
+                  alt=""
+                  width="56"
+                  height="56"
+                  class="h-12 w-12 shrink-0"
+                />
+                <p class="font-heading font-bold text-navy-900 uppercase">
+                  {mod.title}
+                  <span class="block text-sm font-bold text-gold-600 normal-case">
+                    {mod.sections}
+                  </span>
+                </p>
+              </div>
+            ))
+          }
+        </div>
+
+        <p class="mt-6 text-navy-900/80">
+          Each section includes the statutory text written in user-friendly
+          language, relevant court decisions and findings, FTC Statements and
+          Letters of Interpretation, CFPB interpretations, real-life
+          collection scenarios, case problems with answers, and a quiz.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Complete FAQ CTA -->
+  <section class="border-t border-gold-500 bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+      <div
+        class="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between"
+      >
+        <div class="flex items-center gap-4">
+          <img
+            src="/icons/faq/pdf-file.svg"
+            alt=""
+            width="56"
+            height="56"
+            class="h-12 w-12 shrink-0 sm:h-14 sm:w-14"
+          />
+          <div>
+            <p class="font-heading text-base font-bold tracking-wide text-navy-900 uppercase sm:text-lg">
+              Complete FAQ &ndash; 5-Page Guide
+            </p>
+            <p class="mt-1 text-navy-900/70">
+              For additional course, enrollment, access, certificate and
+              organizational information.
+            </p>
+          </div>
+        </div>
+
+        <a
+          href="/FDCPA_FAQ_Full_August_2026.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="View or print the complete 5-page FDCPA Training FAQ"
+          class="inline-flex shrink-0 items-center justify-center gap-3 rounded-[6px] bg-navy-900 px-6 py-4 font-heading text-sm font-bold tracking-wide text-white uppercase transition-colors hover:bg-navy-800"
+        >
+          <img
+            src="/icons/faq/printer.svg"
+            alt=""
+            width="24"
+            height="24"
+            class="h-6 w-6 shrink-0"
+          />
+          View / Print Complete FAQ
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M5 12h14" />
+            <path d="m12 5 7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Page footer note -->
+  <section class="border-t border-navy-900/10 bg-white">
+    <div
+      class="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4 text-sm text-navy-900/70 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8"
+    >
+      <p>FDCPA Training - Frequently Asked Questions</p>
+      <p>Page 1</p>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,542 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+import { Image } from "astro:assets";
+import heroPhoto from "../assets/images/hero_enroll.jpg";
+import scaleBg from "../assets/images/bg-scale-semi-t.jpg";
+
+const heroChecklist = ["24/7 Online Access", "Learn at Your Pace", "Certificate of Completion"];
+
+const includedItems = [
+  {
+    icon: "book-outline",
+    title: "18 Complete Sections",
+    description: "All 18 sections of the FDCPA with plain-language explanations.",
+  },
+  {
+    icon: "scale",
+    title: "Court Cases & Guidance",
+    description: "Real court decisions, FTC letters, and CFPB interpretations.",
+  },
+  {
+    icon: "document",
+    title: "Real-World Scenarios",
+    description: "Practical collection situations with case problems and answers.",
+  },
+  {
+    icon: "interogation",
+    title: "Section Quizzes",
+    description: "Test your knowledge with quizzes after each section.",
+  },
+  {
+    icon: "clock",
+    title: "6 Weeks Access",
+    description:
+      "Access the course for 6 weeks from the date of enrollment. Additional time available upon request.",
+  },
+  {
+    icon: "tablet",
+    title: "Learn Anywhere",
+    description: "Access on desktop, tablet, or mobile devices.",
+  },
+  {
+    icon: "certificate",
+    title: "Certificate of Completion",
+    description: "Download your certificate when you finish.",
+  },
+  {
+    icon: "users-outline",
+    title: "Organizational Reporting",
+    description: "Track progress and completion for your team.",
+  },
+];
+
+const enrollmentTiers = [
+  {
+    icon: "user",
+    label: "Individual",
+    subtitle: "1 Participant",
+    price: "$89",
+    priceUnit: "per person",
+    description: "Perfect for individual professionals.",
+    paypalUrl: "https://www.paypal.com/ncp/payment/H6WZMB6J8UME2",
+  },
+  {
+    icon: "users",
+    label: "Group",
+    subtitle: "2 to 4 Participants",
+    price: "$299",
+    priceUnit: "per group",
+    description: "Save with small team pricing.",
+    paypalUrl: "https://www.paypal.com/ncp/payment/YQ4U958CD6PYS",
+  },
+  {
+    icon: "users",
+    label: "Group",
+    subtitle: "5 to 10 Participants",
+    price: "$649",
+    priceUnit: "per group",
+    description: "Ideal for growing teams.",
+    paypalUrl: "https://www.paypal.com/ncp/payment/KB4XMBRKCA2M6",
+  },
+  {
+    icon: "users",
+    label: "Group",
+    subtitle: "11 to 20 Participants",
+    price: "$1,199",
+    priceUnit: "per group",
+    description: "Great for larger organizations.",
+    paypalUrl: "https://www.paypal.com/ncp/payment/7QSM7GMFQRA84",
+  },
+];
+---
+
+<Layout
+  title="Enroll Today | FDCPA Training"
+  description="Enroll now and complete the comprehensive FDCPA and Regulation F course in approximately 4-6 hours, at your own pace. Course access is provided for 6 weeks."
+>
+  <!-- Hero -->
+  <section class="bg-white mb-[30px]">
+    <div
+      class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-8 lg:px-8"
+    >
+      <div class="py-[30px]">
+        <h1
+          class="font-heading text-4xl leading-tight font-black tracking-tight text-navy-900 uppercase sm:text-[45px]"
+        >
+          Enroll Today
+        </h1>
+        <p class="mt-2 font-heading text-xl font-bold text-gold-600">
+          Start your compliance training in minutes.
+        </p>
+        <p class="mt-4 max-w-lg text-navy-900/80">
+          Enroll now and complete the comprehensive FDCPA &amp; Regulation F
+          course in approximately <strong class="font-bold text-navy-900">4&ndash;6 hours</strong>,
+          at your own pace. Course access is provided for <strong class="font-bold text-navy-900">6 weeks</strong>,
+          with additional time available upon request.
+        </p>
+
+        <ul class="mt-6 flex flex-wrap items-center gap-y-3 sm:divide-x sm:divide-navy-900/20">
+          {
+            heroChecklist.map((item) => (
+              <li class="flex items-center gap-1.5 pr-4 sm:px-4 sm:first:pl-0">
+                <img
+                  src="/icons/enroll/checkmark-circle.svg"
+                  alt=""
+                  width="18"
+                  height="18"
+                  class="h-[18px] w-[18px] shrink-0"
+                />
+                <span class="text-sm font-semibold text-navy-900">
+                  {item}
+                </span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div class="relative h-64 sm:h-80 lg:h-full">
+        <Image
+          src={heroPhoto}
+          alt="A laptop displaying the FDCPA Training course welcome screen, next to a plant and a mug on a desk"
+          width={961}
+          height={639}
+          class="h-full w-full rounded-[6px] object-cover lg:rounded-none lg:[-webkit-mask-image:linear-gradient(to_right,transparent,black_18%)] lg:[mask-image:linear-gradient(to_right,transparent,black_18%)]"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Enrollment Options -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 pb-[30px] sm:px-6 lg:px-8">
+      <div class="mb-8 flex items-center gap-4">
+        <span class="h-px flex-1 bg-gold-500" aria-hidden="true"></span>
+        <h2 class="text-center font-heading text-lg font-bold tracking-wide text-navy-900 uppercase sm:text-xl lg:text-2xl">
+          Choose the Enrollment Option That Works for You
+        </h2>
+        <span class="h-px flex-1 bg-gold-500" aria-hidden="true"></span>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+        {
+          enrollmentTiers.map((tier) => (
+            <div class="flex flex-col rounded-[8px] border border-navy-900/10 bg-white shadow-sm">
+              <div class="flex flex-1 flex-col items-center gap-1 px-6 py-8 text-center">
+                <img
+                  src={`/icons/enroll/${tier.icon}.svg`}
+                  alt=""
+                  width="40"
+                  height="40"
+                  class="h-10 w-10"
+                />
+                <p class="mt-2 font-heading font-bold text-navy-900 uppercase tracking-wide">
+                  {tier.label}
+                </p>
+                <p class="text-sm text-navy-900/70">{tier.subtitle}</p>
+
+                <span class="mt-3 h-px w-8 bg-gold-500" aria-hidden="true" />
+
+                <p class="mt-3 font-heading text-4xl font-black text-navy-900">
+                  {tier.price}
+                </p>
+                <p class="font-heading text-sm font-bold text-navy-900">USD</p>
+                <p class="text-sm font-bold text-navy-900">{tier.priceUnit}</p>
+
+                <p class="mt-3 text-sm text-navy-900/70">{tier.description}</p>
+              </div>
+              <div class="px-6 pb-6">
+                <Button
+                  href={tier.paypalUrl}
+                  target="_blank"
+                  variant="outline"
+                  class="w-full justify-center rounded-[5px] font-extrabold!"
+                >
+                  Enroll Now
+                </Button>
+              </div>
+            </div>
+          ))
+        }
+
+        <!-- Best Value -->
+        <div class="flex flex-col overflow-hidden rounded-[8px] border border-navy-900/10 bg-white shadow-sm">
+          <p class="bg-gold-500 py-2 text-center font-heading text-xs font-bold tracking-wide text-white uppercase">
+            Best Value
+          </p>
+          <div class="flex flex-1 flex-col items-center gap-1 px-6 py-6 text-center">
+            <img
+              src="/icons/enroll/users-orange.svg"
+              alt=""
+              width="40"
+              height="40"
+              class="h-10 w-10"
+            />
+            <p class="mt-2 font-heading font-bold text-navy-900 uppercase tracking-wide">
+              20+ Participants
+            </p>
+            <p class="text-sm font-bold text-navy-900">Contact Us</p>
+
+            <img
+              src="/icons/enroll/price-tag.svg"
+              alt=""
+              width="32"
+              height="32"
+              class="mt-4 h-8 w-8"
+            />
+            <p class="mt-4 text-sm text-navy-900/70">Volume pricing available</p>
+            <p class="text-sm text-navy-900/70">
+              Custom pricing for your organization.
+            </p>
+          </div>
+          <div class="px-6 pb-6">
+            <a
+              href="/contact"
+              class="inline-flex w-full items-center justify-center gap-2 rounded-[5px] bg-gold-500 px-6 py-3 font-heading text-sm font-extrabold tracking-wide text-white uppercase transition-colors hover:bg-gold-400"
+            >
+              Contact Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Training Slots Available -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 pb-[30px] sm:px-6 lg:px-8">
+      <div
+        class="flex flex-col gap-6 rounded-[8px] bg-navy-900 p-6 sm:p-8 lg:flex-row lg:items-center lg:justify-between lg:gap-8"
+      >
+        <div class="flex items-start gap-4 sm:items-center lg:w-3/5">
+          <img
+            src="/icons/enroll/calendar.svg"
+            alt=""
+            width="56"
+            height="56"
+            class="h-12 w-12 shrink-0 sm:h-14 sm:w-14"
+          />
+          <div>
+            <p class="font-heading text-base font-bold tracking-wide text-gold-500 uppercase sm:text-lg">
+              Training Slots Remain Available Until Assigned.
+            </p>
+            <p class="mt-1 text-white/90">
+              Buy now. Assign later. Flexible and convenient.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="flex flex-col items-start gap-4 border-t border-white/15 pt-6 sm:flex-row sm:items-center lg:w-2/5 lg:border-t-0 lg:border-l lg:border-l-[#e69c24] lg:pt-0 lg:pl-8"
+        >
+          <div>
+            <p class="font-heading font-bold text-white">
+              Need more than 20 training slots?
+            </p>
+            <p class="mt-1 text-sm text-white/70">
+              Contact us for organizational pricing and custom training
+              solutions.
+            </p>
+          </div>
+          <Button
+            href="/contact"
+            variant="primary"
+            class="shrink-0 rounded-[5px] font-extrabold!"
+          >
+            Contact Us
+          </Button>
+        </div>
+      </div>
+
+      <div class="mt-6 flex items-center justify-center gap-2 text-center text-sm text-navy-900/70">
+        <img
+          src="/icons/enroll/padlock.svg"
+          alt=""
+          width="20"
+          height="20"
+          class="h-5 w-5 shrink-0"
+        />
+        <p>
+          Secure checkout through{" "}
+          <span
+            class="font-semibold"
+            style="background: linear-gradient(90deg, #00457C, #0079C1); -webkit-background-clip: text; background-clip: text; color: transparent;"
+          >
+            PayPal.
+          </span>{" "}
+          Pay with Paypal account or major credit card.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's Included -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 pb-[30px] sm:px-6 lg:px-8">
+      <div
+        class="grid gap-8 rounded-[8px] border border-navy-900/10 p-6 sm:p-8 lg:grid-cols-[30%_70%] lg:gap-0 lg:divide-x lg:divide-navy-900/10"
+      >
+        <div
+          class="relative flex flex-col items-start justify-start overflow-hidden bg-bottom bg-no-repeat bg-[length:71px_auto] pb-24 lg:bg-[length:170px_auto] lg:pr-8"
+          style={`background-image: url(${scaleBg.src});`}
+        >
+          <div class="flex items-center gap-3">
+            <img
+              src="/icons/enroll/open-book.svg"
+              alt=""
+              width="52"
+              height="52"
+              class="h-[52px] w-[52px] shrink-0"
+            />
+            <div>
+              <p
+                class="font-heading tracking-wide text-navy-900 uppercase"
+                style="font-size: 23px; font-weight: 800;"
+              >
+                What&rsquo;s Included
+              </p>
+              <span class="mt-1 block h-0.5 w-10 bg-gold-500" aria-hidden="true"></span>
+            </div>
+          </div>
+          <p class="mt-3" style="font-size: 20px; color: #011a47;">
+            Everything you need to master FDCPA compliance.
+          </p>
+        </div>
+
+        <div
+          class="grid grid-cols-1 sm:grid-cols-4 sm:divide-x sm:divide-navy-900/10 lg:pl-8"
+        >
+          {
+            includedItems.map((item, index) => (
+              <div
+                class:list={[
+                  "flex flex-col items-center gap-2 border-navy-900/10 px-4 py-6 text-center",
+                  index >= 4 && "sm:border-t",
+                ]}
+              >
+                <img
+                  src={`/icons/enroll/${item.icon}.svg`}
+                  alt=""
+                  width="48"
+                  height="48"
+                  class="h-[60px] w-[60px]"
+                />
+                <p
+                  class="mt-1 font-heading font-bold tracking-wide text-navy-900 capitalize"
+                  style="font-size: 15px; color: #011a47;"
+                >
+                  {item.title}
+                </p>
+                <p class="text-sm" style="color: #011a47;">
+                  {item.description}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How Enrollment Works -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 pb-[30px] sm:px-6 lg:px-8">
+      <div class="flex items-center gap-4 sm:gap-6">
+        <span class="h-px flex-1 bg-gold-500" aria-hidden="true"></span>
+        <h2
+          class="text-center font-heading text-xl font-bold tracking-wide text-navy-900 uppercase sm:text-2xl lg:text-3xl"
+        >
+          How Enrollment Works
+        </h2>
+        <span class="h-px flex-1 bg-gold-500" aria-hidden="true"></span>
+      </div>
+
+      <div
+        class="mt-10 grid gap-10 lg:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr] lg:items-start lg:gap-4"
+      >
+        <div>
+          <img
+            src="/icons/enroll/step1cart.svg"
+            alt=""
+            width="150"
+            height="60"
+            class="h-12 w-auto"
+          />
+          <p class="mt-3 font-heading text-sm font-bold tracking-wide text-navy-900 uppercase">
+            Choose Your Option
+          </p>
+          <p class="mt-1 text-sm text-navy-900/70">
+            Select the enrollment tier that fits your needs.
+          </p>
+        </div>
+
+        <div class="hidden items-center justify-center text-4xl font-bold text-gold-500 lg:flex" aria-hidden="true">
+          &rarr;
+        </div>
+
+        <div>
+          <img
+            src="/icons/enroll/step2checkout.svg"
+            alt=""
+            width="150"
+            height="60"
+            class="h-12 w-auto"
+          />
+          <p class="mt-3 font-heading text-sm font-bold tracking-wide text-navy-900 uppercase">
+            Complete Checkout
+          </p>
+          <p class="mt-1 text-sm text-navy-900/70">
+            Secure payment through PayPal or credit card.
+          </p>
+        </div>
+
+        <div class="hidden items-center justify-center text-4xl font-bold text-gold-500 lg:flex" aria-hidden="true">
+          &rarr;
+        </div>
+
+        <div class="rounded-[8px] bg-emerald-50 p-5">
+          <img
+            src="/icons/enroll/step3.svg"
+            alt=""
+            width="150"
+            height="60"
+            class="h-12 w-auto"
+          />
+          <p class="mt-3 font-heading text-sm font-bold tracking-wide text-emerald-700 uppercase">
+            Submit Participants
+          </p>
+          <p class="mt-1 text-sm text-emerald-700/80">
+            Send us your team list and email addresses.
+          </p>
+        </div>
+
+        <div class="hidden items-center justify-center text-4xl font-bold text-gold-500 lg:flex" aria-hidden="true">
+          &rarr;
+        </div>
+
+        <div class="rounded-[8px] bg-emerald-50 p-5">
+          <div class="flex items-center gap-3">
+            <img
+              src="/icons/enroll/step4.svg"
+              alt=""
+              width="28"
+              height="28"
+              class="h-11 w-11 shrink-0"
+            />
+            <p class="font-heading text-sm font-bold tracking-wide text-emerald-700 uppercase">
+              Account Setup &amp; Invitations
+            </p>
+          </div>
+          <p class="mt-2 text-sm text-emerald-700/80">
+            Upon receipt of staff list, an organizational account &amp; staff
+            names are entered into Trakstar LMS, then 3 separate invitations
+            are emailed to course participants.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Join Over 1,200 Collection Professionals -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 pb-[30px] sm:px-6 lg:px-8">
+      <div
+        class="flex flex-col gap-6 rounded-[8px] bg-navy-900 p-6 sm:p-8 lg:flex-row lg:items-center lg:justify-between lg:gap-8"
+      >
+        <div class="flex items-start gap-4 sm:items-center lg:w-3/5">
+          <img
+            src="/icons/enroll/shield-check.svg"
+            alt=""
+            width="56"
+            height="56"
+            class="h-12 w-12 shrink-0 sm:h-14 sm:w-14"
+          />
+          <div>
+            <p class="font-heading text-base font-bold tracking-wide text-gold-500 uppercase sm:text-lg">
+              Join Over 1,200 Collection Professionals
+            </p>
+            <p class="mt-1 text-white/90">
+              across 55 teams who have completed the course with a 97.3% pass
+              rate.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="flex items-center gap-4 border-t border-white/15 pt-6 lg:border-t-0 lg:pt-0 lg:pl-8"
+        >
+          <a
+            href="/course-overview"
+            class="inline-flex items-center gap-2 rounded-[5px] border-2 border-gold-500 px-6 py-3 font-heading text-[1rem] uppercase tracking-wide text-white transition-colors hover:bg-gold-500 hover:text-navy-900 sm:text-[1.2rem]"
+            style="font-weight: 800;"
+          >
+            View Course Overview
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              style="width: 1.2em; height: 1.2em;"
+              aria-hidden="true"
+            >
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style is:global>
+  #main-content {
+    --color-gold-400: #e19525;
+    --color-gold-500: #e19525;
+    --color-gold-600: #e19525;
+  }
+</style>
