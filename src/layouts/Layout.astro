@@ -1,5 +1,6 @@
 ---
 import Header from "../components/Header.astro";
+import MobileTopbar from "../components/MobileTopbar.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 
@@ -54,6 +55,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 	</head>
 	<body class="bg-white text-navy-900">
 		<a href="#main-content" class="skip-link">Skip to content</a>
+		<MobileTopbar />
 		<Header />
 		<main id="main-content">
 			<slot />
