@@ -5,13 +5,18 @@ import { Image } from "astro:assets";
 import heroPhoto from "../assets/images/hero_enroll.jpg";
 import scaleBg from "../assets/images/bg-scale-semi-t.jpg";
 
-const heroChecklist = ["24/7 Online Access", "Learn at Your Pace", "Certificate of Completion"];
+const heroChecklist = [
+  "24/7 Online Access",
+  "Learn at Your Pace",
+  "Certificate of Completion",
+];
 
 const includedItems = [
   {
     icon: "book-outline",
     title: "18 Complete Sections",
-    description: "All 18 sections of the FDCPA with plain-language explanations.",
+    description:
+      "All 18 sections of the FDCPA with plain-language explanations.",
   },
   {
     icon: "scale",
@@ -21,7 +26,8 @@ const includedItems = [
   {
     icon: "document",
     title: "Real-World Scenarios",
-    description: "Practical collection situations with case problems and answers.",
+    description:
+      "Practical collection situations with case problems and answers.",
   },
   {
     icon: "interogation",
@@ -111,12 +117,16 @@ const enrollmentTiers = [
         </p>
         <p class="mt-4 max-w-lg text-navy-900/80">
           Enroll now and complete the comprehensive FDCPA &amp; Regulation F
-          course in approximately <strong class="font-bold text-navy-900">4&ndash;6 hours</strong>,
-          at your own pace. Course access is provided for <strong class="font-bold text-navy-900">6 weeks</strong>,
-          with additional time available upon request.
+          course in approximately <strong class="font-bold text-navy-900"
+            >4&ndash;6 hours</strong
+          >, at your own pace. Course access is provided for <strong
+            class="font-bold text-navy-900">6 weeks</strong
+          >, with additional time available upon request.
         </p>
 
-        <ul class="mt-6 flex flex-wrap items-center gap-y-3 sm:divide-x sm:divide-navy-900/20">
+        <ul
+          class="mt-6 flex flex-wrap items-center gap-y-3 sm:divide-x sm:divide-navy-900/20"
+        >
           {
             heroChecklist.map((item) => (
               <li class="flex items-center gap-1.5 pr-4 sm:px-4 sm:first:pl-0">
@@ -127,9 +137,7 @@ const enrollmentTiers = [
                   height="18"
                   class="h-[18px] w-[18px] shrink-0"
                 />
-                <span class="text-sm font-semibold text-navy-900">
-                  {item}
-                </span>
+                <span class="text-sm font-semibold text-navy-900">{item}</span>
               </li>
             ))
           }
@@ -153,7 +161,9 @@ const enrollmentTiers = [
     <div class="mx-auto max-w-7xl px-4 pb-[30px] sm:px-6 lg:px-8">
       <div class="mb-8 flex items-center gap-4">
         <span class="h-px flex-1 bg-gold-500" aria-hidden="true"></span>
-        <h2 class="text-center font-heading text-lg font-bold tracking-wide text-navy-900 uppercase sm:text-xl lg:text-2xl">
+        <h2
+          class="text-center font-heading text-lg font-bold tracking-wide text-navy-900 uppercase sm:text-xl lg:text-2xl"
+        >
           Choose the Enrollment Option That Works for You
         </h2>
         <span class="h-px flex-1 bg-gold-500" aria-hidden="true"></span>
@@ -201,11 +211,15 @@ const enrollmentTiers = [
         }
 
         <!-- Best Value -->
-        <div class="flex flex-col overflow-hidden rounded-[8px] border border-navy-900/10 bg-white shadow-sm">
-          <p class="bg-gold-500 py-2 text-center font-heading text-xs font-bold tracking-wide text-white uppercase">
+        <div
+          class="flex flex-col overflow-hidden rounded-[8px] border border-navy-900/10 bg-white shadow-sm"
+        >
+          <!-- <p class="bg-gold-500 py-2 text-center font-heading text-xs font-bold tracking-wide text-white uppercase">
             Best Value
-          </p>
-          <div class="flex flex-1 flex-col items-center gap-1 px-6 py-6 text-center">
+          </p> -->
+          <div
+            class="flex flex-1 flex-col items-center gap-1 px-6 py-6 text-center"
+          >
             <img
               src="/icons/enroll/users-orange.svg"
               alt=""
@@ -213,7 +227,9 @@ const enrollmentTiers = [
               height="40"
               class="h-10 w-10"
             />
-            <p class="mt-2 font-heading font-bold text-navy-900 uppercase tracking-wide">
+            <p
+              class="mt-2 font-heading font-bold text-navy-900 uppercase tracking-wide"
+            >
               20+ Participants
             </p>
             <p class="text-sm font-bold text-navy-900">Contact Us</p>
@@ -225,7 +241,9 @@ const enrollmentTiers = [
               height="32"
               class="mt-4 h-8 w-8"
             />
-            <p class="mt-4 text-sm text-navy-900/70">Volume pricing available</p>
+            <p class="mt-4 text-sm text-navy-900/70">
+              Volume pricing available
+            </p>
             <p class="text-sm text-navy-900/70">
               Custom pricing for your organization.
             </p>
@@ -258,7 +276,9 @@ const enrollmentTiers = [
             class="h-12 w-12 shrink-0 sm:h-14 sm:w-14"
           />
           <div>
-            <p class="font-heading text-base font-bold tracking-wide text-gold-500 uppercase sm:text-lg">
+            <p
+              class="font-heading text-base font-bold tracking-wide text-gold-500 uppercase sm:text-lg"
+            >
               Training Slots Remain Available Until Assigned.
             </p>
             <p class="mt-1 text-white/90">
@@ -289,7 +309,9 @@ const enrollmentTiers = [
         </div>
       </div>
 
-      <div class="mt-6 flex items-center justify-center gap-2 text-center text-sm text-navy-900/70">
+      <div
+        class="mt-6 flex items-center justify-center gap-2 text-center text-sm text-navy-900/70"
+      >
         <img
           src="/icons/enroll/padlock.svg"
           alt=""
@@ -336,7 +358,8 @@ const enrollmentTiers = [
               >
                 What&rsquo;s Included
               </p>
-              <span class="mt-1 block h-0.5 w-10 bg-gold-500" aria-hidden="true"></span>
+              <span class="mt-1 block h-0.5 w-10 bg-gold-500" aria-hidden="true"
+              ></span>
             </div>
           </div>
           <p class="mt-3" style="font-size: 20px; color: #011a47;">
@@ -403,7 +426,9 @@ const enrollmentTiers = [
             height="60"
             class="h-12 w-auto"
           />
-          <p class="mt-3 font-heading text-sm font-bold tracking-wide text-navy-900 uppercase">
+          <p
+            class="mt-3 font-heading text-sm font-bold tracking-wide text-navy-900 uppercase"
+          >
             Choose Your Option
           </p>
           <p class="mt-1 text-sm text-navy-900/70">
@@ -411,7 +436,10 @@ const enrollmentTiers = [
           </p>
         </div>
 
-        <div class="hidden items-center justify-center text-4xl font-bold text-gold-500 lg:flex" aria-hidden="true">
+        <div
+          class="hidden items-center justify-center text-4xl font-bold text-gold-500 lg:flex"
+          aria-hidden="true"
+        >
           &rarr;
         </div>
 
@@ -423,7 +451,9 @@ const enrollmentTiers = [
             height="60"
             class="h-12 w-auto"
           />
-          <p class="mt-3 font-heading text-sm font-bold tracking-wide text-navy-900 uppercase">
+          <p
+            class="mt-3 font-heading text-sm font-bold tracking-wide text-navy-900 uppercase"
+          >
             Complete Checkout
           </p>
           <p class="mt-1 text-sm text-navy-900/70">
@@ -431,7 +461,10 @@ const enrollmentTiers = [
           </p>
         </div>
 
-        <div class="hidden items-center justify-center text-4xl font-bold text-gold-500 lg:flex" aria-hidden="true">
+        <div
+          class="hidden items-center justify-center text-4xl font-bold text-gold-500 lg:flex"
+          aria-hidden="true"
+        >
           &rarr;
         </div>
 
@@ -443,7 +476,9 @@ const enrollmentTiers = [
             height="60"
             class="h-12 w-auto"
           />
-          <p class="mt-3 font-heading text-sm font-bold tracking-wide text-emerald-700 uppercase">
+          <p
+            class="mt-3 font-heading text-sm font-bold tracking-wide text-emerald-700 uppercase"
+          >
             Submit Participants
           </p>
           <p class="mt-1 text-sm text-emerald-700/80">
@@ -451,7 +486,10 @@ const enrollmentTiers = [
           </p>
         </div>
 
-        <div class="hidden items-center justify-center text-4xl font-bold text-gold-500 lg:flex" aria-hidden="true">
+        <div
+          class="hidden items-center justify-center text-4xl font-bold text-gold-500 lg:flex"
+          aria-hidden="true"
+        >
           &rarr;
         </div>
 
@@ -464,14 +502,16 @@ const enrollmentTiers = [
               height="28"
               class="h-11 w-11 shrink-0"
             />
-            <p class="font-heading text-sm font-bold tracking-wide text-emerald-700 uppercase">
+            <p
+              class="font-heading text-sm font-bold tracking-wide text-emerald-700 uppercase"
+            >
               Account Setup &amp; Invitations
             </p>
           </div>
           <p class="mt-2 text-sm text-emerald-700/80">
             Upon receipt of staff list, an organizational account &amp; staff
-            names are entered into Trakstar LMS, then 3 separate invitations
-            are emailed to course participants.
+            names are entered into Trakstar LMS, then 3 separate invitations are
+            emailed to course participants.
           </p>
         </div>
       </div>
@@ -493,7 +533,9 @@ const enrollmentTiers = [
             class="h-12 w-12 shrink-0 sm:h-14 sm:w-14"
           />
           <div>
-            <p class="font-heading text-base font-bold tracking-wide text-gold-500 uppercase sm:text-lg">
+            <p
+              class="font-heading text-base font-bold tracking-wide text-gold-500 uppercase sm:text-lg"
+            >
               Join Over 1,200 Collection Professionals
             </p>
             <p class="mt-1 text-white/90">
@@ -523,8 +565,8 @@ const enrollmentTiers = [
               style="width: 1.2em; height: 1.2em;"
               aria-hidden="true"
             >
-              <path d="M5 12h14" />
-              <path d="m12 5 7 7-7 7" />
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
             </svg>
           </a>
         </div>
