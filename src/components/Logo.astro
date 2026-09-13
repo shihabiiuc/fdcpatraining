@@ -1,9 +1,13 @@
 ---
+import { Image } from "astro:assets";
+import logoSrc from "../assets/images/logo.png";
+
 interface Props {
 	class?: string;
+	loading?: "eager" | "lazy";
 }
 
-const { class: className = "h-12" } = Astro.props;
+const { class: className = "h-12", loading = "eager" } = Astro.props;
 ---
 
 <a
@@ -11,11 +15,15 @@ const { class: className = "h-12" } = Astro.props;
 	aria-label="FDCPA Training — home"
 	class="inline-flex items-center"
 >
-	<img
-		src="/logo.png"
+	<Image
+		src={logoSrc}
 		alt="FDCPA Training"
-		width={250}
-		height={100}
+		width={400}
+		height={160}
+		densities={[1, 2]}
+		format="webp"
+		quality="high"
+		loading={loading}
 		class={`w-auto ${className}`}
 	/>
 </a>

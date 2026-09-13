@@ -2,10 +2,16 @@
 import Layout from "../layouts/Layout.astro";
 import Button from "../components/Button.astro";
 import Stat from "../components/Stat.astro";
+import VideoEmbed from "../components/VideoEmbed.astro";
 import heroPhoto from "../assets/images/hero-fdcpa-book.jpg";
 import logoText from "../assets/images/logo-text.png";
 import gayleWolfe from "../assets/images/gayle-wolfe.jpg";
 import { Image } from "astro:assets";
+
+const posterUrl = new URL("/video-thumbnail.webp", Astro.site);
+const courseOverviewVideoSrc =
+  "https://player.mux.com/vdsytbs9G02qc01oqRLHb5OgxwLEMke9GCPFWO3LIbEZ4?metadata-video-title=Course+Overview&video-title=Course+Overview&accent-color=%23ffffff&primary-color=%23e69c24&poster=" +
+  encodeURIComponent(posterUrl.toString());
 
 const learnItems = [
   "FDCPA Fundamentals & Key Definitions",
@@ -138,6 +144,8 @@ const authorCredentials = [
           alt="A gavel resting on a bound copy of the FDCPA"
           width={320}
           height={320}
+          loading="eager"
+          fetchpriority="high"
           class="mx-auto aspect-square h-auto w-full max-w-md rounded-full border-4 border-white object-cover lg:mx-0"
         />
       </div>
@@ -148,6 +156,9 @@ const authorCredentials = [
           alt="FDCPA Training — Knowledge. Judgment. Compliance."
           width={400}
           height={227}
+          format="webp"
+          quality={60}
+          loading="eager"
           class="mx-auto w-full max-w-[280px] lg:mx-0"
         />
         <span
@@ -227,12 +238,7 @@ const authorCredentials = [
       <div
         class="self-start overflow-hidden rounded-[5px] border-2 border-gold-500/40"
       >
-        <iframe
-          src="https://player.mux.com/vdsytbs9G02qc01oqRLHb5OgxwLEMke9GCPFWO3LIbEZ4?metadata-video-title=Course+Overview&video-title=Course+Overview&accent-color=%23ffffff&primary-color=%23e69c24&poster=https%3A%2F%2Fimage.mux.com%2Fvdsytbs9G02qc01oqRLHb5OgxwLEMke9GCPFWO3LIbEZ4%2Fthumbnail.png%3Fwidth%3D600%26height%3D340%26time%3D03"
-          style="width: 100%; border: none; aspect-ratio: 16/9; display: block;"
-          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
-          allowfullscreen
-          title="Course Overview"></iframe>
+        <VideoEmbed videoSrc={courseOverviewVideoSrc} title="Course Overview" />
       </div>
 
       <div>

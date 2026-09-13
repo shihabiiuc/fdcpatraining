@@ -16,16 +16,29 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <!doctype html>
 <html lang="en">
 	<head>
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-SGPJR0WFE9"></script>
+		<!-- Google tag (gtag.js) - loaded after first interaction/idle so it doesn't compete with page render -->
 		<script>
 			window.dataLayer = window.dataLayer || [];
 			function gtag() {
 				dataLayer.push(arguments);
 			}
 			gtag("js", new Date());
-
 			gtag("config", "G-SGPJR0WFE9");
+
+			let gtmLoaded = false;
+			function loadGtm() {
+				if (gtmLoaded) return;
+				gtmLoaded = true;
+				const script = document.createElement("script");
+				script.async = true;
+				script.src = "https://www.googletagmanager.com/gtag/js?id=G-SGPJR0WFE9";
+				document.head.appendChild(script);
+			}
+
+			["scroll", "mousemove", "touchstart", "keydown"].forEach((eventName) =>
+				window.addEventListener(eventName, loadGtm, { once: true, passive: true }),
+			);
+			setTimeout(loadGtm, 5000);
 		</script>
 
 		<meta charset="utf-8" />
@@ -45,13 +58,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<meta property="og:url" content={canonicalURL} />
 		<meta property="og:site_name" content="FDCPA Training" />
 		<meta property="og:image" content={new URL("/logo.png", Astro.site)} />
-
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nunito+Sans:wght@500;600;700;800&display=swap"
-			rel="stylesheet"
-		/>
 	</head>
 	<body class="bg-white text-navy-900">
 		<a href="#main-content" class="skip-link">Skip to content</a>

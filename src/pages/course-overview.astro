@@ -8,6 +8,11 @@ import { Image } from "astro:assets";
 const videoSrc =
   "https://player.mux.com/nMsf4hAGiih2x00Gt2wvDFAc7a016u3EAGGd4qBzaJiEg?metadata-video-title=FDCPA+Training+Overview&video-title=FDCPA+Training+Overview";
 
+const overviewPosterUrl = new URL("/video-thumbnail.webp", Astro.site);
+const overviewVideoSrc =
+  "https://player.mux.com/vdsytbs9G02qc01oqRLHb5OgxwLEMke9GCPFWO3LIbEZ4?metadata-video-title=Course+Overview&video-title=Course+Overview&accent-color=%23ffffff&primary-color=%23e69c24&poster=" +
+  encodeURIComponent(overviewPosterUrl.toString());
+
 const differentiators = [
   {
     title: "Practical, not theoretical.",
@@ -173,6 +178,8 @@ const courseCoverItems = [
           alt="A gavel resting on a bound copy of the FDCPA"
           width={1048}
           height={640}
+          loading="eager"
+          fetchpriority="high"
           class="h-full w-full rounded-[5px] object-cover lg:rounded-none lg:[mask-image:linear-gradient(to_right,transparent,black_18%)] lg:[-webkit-mask-image:linear-gradient(to_right,transparent,black_18%)]"
         />
       </div>
@@ -505,10 +512,7 @@ const courseCoverItems = [
   </div>
 </Layout>
 
-<script>
-  const videoSrc =
-    "https://player.mux.com/vdsytbs9G02qc01oqRLHb5OgxwLEMke9GCPFWO3LIbEZ4?metadata-video-title=Course+Overview&video-title=Course+Overview&accent-color=%23ffffff&primary-color=%23e69c24&poster=https%3A%2F%2Fimage.mux.com%2Fvdsytbs9G02qc01oqRLHb5OgxwLEMke9GCPFWO3LIbEZ4%2Fthumbnail.png%3Fwidth%3D600%26height%3D340%26time%3D03";
-
+<script define:vars={{ videoSrc: overviewVideoSrc }}>
   const openBtn = document.getElementById("watch-overview-btn");
   const lightbox = document.getElementById("video-lightbox");
   const closeBtn = document.getElementById("video-lightbox-close");

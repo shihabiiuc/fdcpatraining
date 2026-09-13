@@ -1,9 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Button from "../components/Button.astro";
+import VideoEmbed from "../components/VideoEmbed.astro";
 
+const posterUrl = new URL("/video-thumbnail.webp", Astro.site);
 const videoSrc =
-  "https://player.mux.com/vdsytbs9G02qc01oqRLHb5OgxwLEMke9GCPFWO3LIbEZ4?metadata-video-title=Course+Overview&video-title=Course+Overview&accent-color=%23ffffff&primary-color=%23e69c24&poster=https%3A%2F%2Fimage.mux.com%2Fvdsytbs9G02qc01oqRLHb5OgxwLEMke9GCPFWO3LIbEZ4%2Fthumbnail.png%3Fwidth%3D600%26height%3D340%26time%3D03";
+  "https://player.mux.com/vdsytbs9G02qc01oqRLHb5OgxwLEMke9GCPFWO3LIbEZ4?metadata-video-title=Course+Overview&video-title=Course+Overview&accent-color=%23ffffff&primary-color=%23e69c24&poster=" +
+  encodeURIComponent(posterUrl.toString());
 ---
 
 <Layout
@@ -35,12 +38,7 @@ const videoSrc =
       <div
         class="mx-auto mt-10 max-w-xl overflow-hidden rounded-[5px] border-2 border-gold-500/40"
       >
-        <iframe
-          src={videoSrc}
-          style="width: 100%; border: none; aspect-ratio: 16/9; display: block;"
-          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
-          allowfullscreen
-          title="Course Overview"></iframe>
+        <VideoEmbed videoSrc={videoSrc} title="Course Overview" />
       </div>
 
       <div class="mt-10 mb-[30px] flex flex-col items-center justify-center gap-4 sm:flex-row">
