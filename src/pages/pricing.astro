@@ -6,7 +6,8 @@ import { Image } from "astro:assets";
 
 const flexibleAssignment = {
   title: "Flexible Assignment",
-  description: "Training slots remain available until assigned to a staff member.",
+  description:
+    "Training slots remain available until assigned to a staff member.",
 };
 
 const packages = [
@@ -80,7 +81,8 @@ const trainingIncludes = [
   {
     icon: "assessments",
     title: "Scenario-Based Assessments",
-    description: "Realistic situations that test knowledge and compliance judgment.",
+    description:
+      "Realistic situations that test knowledge and compliance judgment.",
   },
   {
     icon: "explanations",
@@ -90,7 +92,8 @@ const trainingIncludes = [
   {
     icon: "certificate",
     title: "Certificate of Completion",
-    description: "Awarded upon successful completion of the course and assessments.",
+    description:
+      "Awarded upon successful completion of the course and assessments.",
   },
   {
     icon: "self-paced",
@@ -103,17 +106,20 @@ const supportItems = [
   {
     icon: "secure-enrollment",
     title: "Secure Enrollment",
-    description: "Your information and payment are protected with SSL encryption and secure processing.",
+    description:
+      "Your information and payment are protected with SSL encryption and secure processing.",
   },
   {
     icon: "instant-access",
     title: "Instant Access",
-    description: "Access instructions are provided immediately after enrollment and payment.",
+    description:
+      "Access instructions are provided immediately after enrollment and payment.",
   },
   {
     icon: "support",
     title: "Support",
-    description: "Our support team is here to help you get the training your team needs.",
+    description:
+      "Our support team is here to help you get the training your team needs.",
   },
 ];
 ---
@@ -138,7 +144,11 @@ const supportItems = [
         </p>
         <p class="mt-4 max-w-lg text-[#011a47]">
           Choose the training option that fits your team. Purchase today and
-          assign training slots to staff when you&rsquo;re ready.
+          assign training slots to staff when you&rsquo;re ready. <a
+            href="/faq"
+            style="border-bottom: 1px solid #02162d;"
+            >Read our FAQ if you still have questons.</a
+          >
         </p>
       </div>
 
@@ -246,7 +256,9 @@ const supportItems = [
             class="h-12 w-12 shrink-0 sm:h-14 sm:w-14"
           />
           <div>
-            <p class="font-heading text-base font-bold tracking-wide text-gold-500 uppercase sm:text-lg">
+            <p
+              class="font-heading text-base font-bold tracking-wide text-gold-500 uppercase sm:text-lg"
+            >
               Training Slots Remain Available Until Assigned.
             </p>
             <p class="mt-1 text-white/90">
@@ -343,9 +355,7 @@ const supportItems = [
                   <p class="font-heading text-sm font-bold tracking-wide text-[#011a47] uppercase">
                     {item.title}
                   </p>
-                  <p class="mt-1 text-sm text-[#011a47]">
-                    {item.description}
-                  </p>
+                  <p class="mt-1 text-sm text-[#011a47]">{item.description}</p>
                 </div>
               </div>
             ))
@@ -369,11 +379,13 @@ const supportItems = [
           class="h-[75px] w-[75px] shrink-0"
         />
         <div>
-          <p class="font-heading text-[22px] font-bold tracking-wide text-gold-500 uppercase">
+          <p
+            class="font-heading text-[22px] font-bold tracking-wide text-gold-500 uppercase"
+          >
             Practical Training. Real Results.
           </p>
           <p class="mt-1 max-w-[560px] text-white/90">
-            Over 1,200 collection professionals across 50 organizations have
+            Over 1,200 collection professionals across 55 organizations have
             completed the course with a 97.3% pass rate.
           </p>
         </div>
