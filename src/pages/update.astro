@@ -1,11 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
-import VideoEmbed from "../components/VideoEmbed.astro";
 import logoSecondary from "../assets/images/logo-secondary.png";
-
-const thumbnail = "/compliance-update-thumbnail.webp";
-const posterUrl = new URL(thumbnail, Astro.site);
 
 // Newest first. To publish a future update, add an entry to the top of this
 // list; `video` is optional.
@@ -27,10 +23,8 @@ const updates = [
     video: {
       heading: "60-Second Compliance Overview",
       title: "60-Second FDCPA Compliance Update",
-      thumbnail,
-      src:
-        "https://player.mux.com/L9HSIOa4FTtkUXxvGIhSvWpLCor3o59zckWJ02Zf5WUg?metadata-video-title=Compliance+Update&video-title=Compliance+Update&accent-color=%23ffffff&primary-color=%23e69c24&poster=" +
-        encodeURIComponent(posterUrl.toString()),
+      // thumbnail-time picks the title card as Mux's poster frame.
+      src: "https://player.mux.com/L9HSIOa4FTtkUXxvGIhSvWpLCor3o59zckWJ02Zf5WUg?metadata-video-title=Compliance+Update&video-title=Compliance+Update&accent-color=%23ffffff&primary-color=%23e69c24&thumbnail-time=3",
     },
   },
 ];
@@ -146,11 +140,13 @@ const updates = [
               <h2 class="font-heading text-2xl font-extrabold text-navy-900 sm:text-3xl">
                 {update.video.heading}
               </h2>
-              <VideoEmbed
-                videoSrc={update.video.src}
+              <iframe
+                src={update.video.src}
                 title={update.video.title}
-                thumbnail={update.video.thumbnail}
-                class="mt-6 overflow-hidden rounded-md shadow-md"
+                loading="lazy"
+                allow="accelerometer; gyroscope; encrypted-media; picture-in-picture; fullscreen"
+                allowfullscreen
+                class="mt-6 block aspect-video w-full overflow-hidden rounded-md border-0 bg-navy-900 shadow-md"
               />
             </div>
           )}
