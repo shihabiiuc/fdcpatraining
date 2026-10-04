@@ -2,10 +2,16 @@
 interface Props {
 	videoSrc: string;
 	title: string;
+	thumbnail?: string;
 	class?: string;
 }
 
-const { videoSrc, title, class: className = "" } = Astro.props;
+const {
+	videoSrc,
+	title,
+	thumbnail = "/video-thumbnail.webp",
+	class: className = "",
+} = Astro.props;
 ---
 
 <div
@@ -20,7 +26,7 @@ const { videoSrc, title, class: className = "" } = Astro.props;
 		aria-label={`Play video: ${title}`}
 	>
 		<img
-			src="/video-thumbnail.webp"
+			src={thumbnail}
 			alt=""
 			width="600"
 			height="338"

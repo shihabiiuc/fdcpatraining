@@ -12,5 +12,11 @@ export default defineConfig({
       plugins: [tailwindcss()],
 	},
 
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      // /update stays out of the sitemap (and is noindex) until the client
+      // approves it. Remove this filter at launch.
+      filter: (page) => !/\/update\/?$/.test(page),
+    }),
+  ],
 });

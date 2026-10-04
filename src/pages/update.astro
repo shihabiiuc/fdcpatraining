@@ -1,0 +1,229 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import VideoEmbed from "../components/VideoEmbed.astro";
+import logoSecondary from "../assets/images/logo-secondary.png";
+
+const thumbnail = "/compliance-update-thumbnail.webp";
+const posterUrl = new URL(thumbnail, Astro.site);
+
+// Newest first. To publish a future update, add an entry to the top of this
+// list; `video` is optional.
+const updates = [
+  {
+    id: "2026-fdcpa-compliance-update",
+    title: "2026 FDCPA Compliance Update",
+    summary: [
+      "Five recent developments highlight important considerations in today’s FDCPA compliance environment, including Article III standing, communications with represented consumers, bankruptcy-related collection activity, the CFPB’s withdrawal of guidance documents, and the continuing requirements of Regulation F.",
+      "The one-page update provides a concise summary of each development together with sources and primary-source corroboration.",
+    ],
+    pdf: {
+      href: "/FDCPA-Compliance-Update-2026.pdf",
+      label: "View the 2026 Compliance Update",
+      ariaLabel:
+        "View the 2026 FDCPA Compliance Update, one-page PDF (opens in a new tab)",
+      note: "One-page PDF • Sources and primary-source corroboration included.",
+    },
+    video: {
+      heading: "60-Second Compliance Overview",
+      title: "60-Second FDCPA Compliance Update",
+      thumbnail,
+      src:
+        "https://player.mux.com/L9HSIOa4FTtkUXxvGIhSvWpLCor3o59zckWJ02Zf5WUg?metadata-video-title=Compliance+Update&video-title=Compliance+Update&accent-color=%23ffffff&primary-color=%23e69c24&poster=" +
+        encodeURIComponent(posterUrl.toString()),
+    },
+  },
+];
+---
+
+<Layout
+  title="FDCPA Compliance Updates | FDCPA Training"
+  description="Review selected FDCPA and CFPB Regulation F compliance updates, including recent court decisions, regulatory developments and primary-source references."
+  noindex
+>
+  <!-- Page Header -->
+  <section class="bg-white">
+    <div
+      class="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-10 sm:flex-row sm:items-center sm:px-6 lg:px-8"
+    >
+      <a href="/" aria-label="FDCPA Training — home" class="shrink-0">
+        <Image
+          src={logoSecondary}
+          alt="FDCPA Training — Knowledge. Judgment. Compliance."
+          width={540}
+          height={197}
+          densities={[1, 2]}
+          format="webp"
+          quality="high"
+          loading="eager"
+          class="h-20 w-auto sm:h-24"
+        />
+      </a>
+      <span
+        class="hidden h-16 w-px shrink-0 bg-gold-500 sm:block sm:h-20"
+        aria-hidden="true"
+      ></span>
+      <h1
+        class="font-heading text-3xl leading-tight font-black tracking-tight text-navy-900 uppercase sm:text-4xl"
+      >
+        FDCPA Compliance Updates
+      </h1>
+    </div>
+  </section>
+
+  <!-- Introduction -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
+      <div class="max-w-3xl space-y-4 text-lg leading-relaxed text-navy-900/80">
+        <p>
+          The FDCPA and CFPB Regulation F compliance environment continues to
+          develop through court decisions, regulatory activity and evolving
+          compliance considerations.
+        </p>
+        <p>
+          FDCPA Training provides selected compliance updates to help
+          collection professionals and management remain aware of developments
+          that may warrant review of organizational policies, procedures and
+          training.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compliance updates -->
+  {
+    updates.map((update) => (
+      <article
+        id={update.id}
+        aria-labelledby={`${update.id}-title`}
+        class="border-t border-gold-500 bg-white"
+      >
+        <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <div class="max-w-3xl">
+            <h2
+              id={`${update.id}-title`}
+              class="font-heading text-2xl font-extrabold text-navy-900 sm:text-3xl"
+            >
+              {update.title}
+            </h2>
+            <div class="mt-4 space-y-4 leading-relaxed text-navy-900/80">
+              {update.summary.map((paragraph) => (
+                <p>{paragraph}</p>
+              ))}
+            </div>
+
+            <div class="mt-8">
+              <a
+                href={update.pdf.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={update.pdf.ariaLabel}
+                class="inline-flex items-center justify-center gap-3 rounded-[6px] bg-navy-900 px-6 py-4 font-heading text-sm font-bold tracking-wide text-white uppercase transition-colors hover:bg-navy-800"
+              >
+                {update.pdf.label}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </a>
+              <p class="mt-3 text-sm text-navy-900/70">{update.pdf.note}</p>
+            </div>
+          </div>
+
+          {update.video && (
+            <div class="mt-12 max-w-4xl">
+              <h2 class="font-heading text-2xl font-extrabold text-navy-900 sm:text-3xl">
+                {update.video.heading}
+              </h2>
+              <VideoEmbed
+                videoSrc={update.video.src}
+                title={update.video.title}
+                thumbnail={update.video.thumbnail}
+                class="mt-6 overflow-hidden rounded-md shadow-md"
+              />
+            </div>
+          )}
+        </div>
+      </article>
+    ))
+  }
+
+  <!-- Training program -->
+  <section
+    aria-labelledby="training-title"
+    class="border-t border-navy-900/10 bg-surface"
+  >
+    <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <h2
+          id="training-title"
+          class="font-heading text-2xl font-extrabold text-navy-900 sm:text-3xl"
+        >
+          FDCPA &amp; Regulation F Compliance Training
+        </h2>
+        <p class="mt-4 leading-relaxed text-navy-900/80">
+          FDCPA Training provides scenario-based online training designed to
+          help collection personnel understand and apply FDCPA and CFPB
+          Regulation F requirements in practical collection situations.
+        </p>
+        <a
+          href="/course-overview"
+          class="mt-6 inline-flex items-center gap-2 border-b-2 border-gold-500 pb-1 font-heading text-sm font-bold tracking-wide text-navy-900 uppercase transition-colors hover:text-gold-600"
+        >
+          Learn About the Training
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M5 12h14" />
+            <path d="m12 5 7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Educational disclaimer -->
+  <aside aria-labelledby="disclaimer-title" class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+      <div
+        class="rounded-md border border-gold-500/60 border-t-4 border-t-gold-500 bg-white px-5 py-6 sm:px-8"
+      >
+        <h2
+          id="disclaimer-title"
+          class="font-heading text-sm font-extrabold tracking-wide text-navy-900 sm:text-base"
+        >
+          IMPORTANT - EDUCATIONAL INFORMATION ONLY - NOT LEGAL ADVICE OR A LEGAL
+          OPINION
+        </h2>
+        <p class="mt-3 text-sm leading-relaxed text-navy-900/80 sm:text-base">
+          This publication is provided solely for general educational and
+          training purposes. It does not constitute legal advice, a legal
+          opinion, or an interpretation of law applicable to any particular
+          facts, matter, organization, or jurisdiction. Readers should consult
+          qualified legal counsel regarding the application of the FDCPA,
+          Regulation F, or other applicable law to specific circumstances.
+        </p>
+      </div>
+    </div>
+  </aside>
+</Layout>
