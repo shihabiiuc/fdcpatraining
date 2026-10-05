@@ -1,6 +1,7 @@
 ---
 import Logo from "./Logo.astro";
 import Button from "./Button.astro";
+import { latestUpdate } from "../data/complianceUpdates";
 
 const navLinks = [
 	{ label: "Home", href: "/" },
@@ -19,17 +20,27 @@ const isActive = (href: string) =>
 
 <header class="relative z-50 border-b border-gold-500/40 bg-navy-900">
 	<div class="hidden border-b border-white/10 bg-[#001230] lg:block">
-		<div
-			class="mx-auto flex max-w-7xl items-center justify-end px-4 py-1.5 sm:px-6 lg:px-8"
-		>
+		<div class="mx-auto flex max-w-7xl items-center px-4 py-2 sm:px-6 lg:px-8">
 			<a
 				href={resourceLink.href}
 				aria-current={isActive(resourceLink.href) ? "page" : undefined}
-				class={`font-heading text-xs font-bold tracking-wide text-gold-400 uppercase transition-colors hover:text-white ${
-					isActive(resourceLink.href) ? "underline underline-offset-4" : ""
-				}`}
+				class="group flex items-center gap-3 text-[13px] leading-none"
 			>
-				{resourceLink.label} <span aria-hidden="true">&rarr;</span>
+				<span
+					class="font-heading font-extrabold tracking-wider text-gold-500 uppercase"
+				>
+					{resourceLink.label}
+				</span>
+				<span class="text-white/40" aria-hidden="true">&middot;</span>
+				<span class="text-white/85 transition-colors group-hover:text-white">
+					{latestUpdate.title}
+				</span>
+				<span class="text-white/40" aria-hidden="true">&mdash;</span>
+				<span
+					class="font-semibold text-gold-500 underline-offset-4 group-hover:underline"
+				>
+					View <span aria-hidden="true">&rarr;</span>
+				</span>
 			</a>
 		</div>
 	</div>
