@@ -10,12 +10,30 @@ const navLinks = [
 	{ label: "Contact", href: "/contact" },
 ];
 
+const resourceLink = { label: "Compliance Updates", href: "/update" };
+
 const currentPath = Astro.url.pathname;
 const isActive = (href: string) =>
 	href === "/" ? currentPath === "/" : currentPath.startsWith(href);
 ---
 
 <header class="relative z-50 border-b border-gold-500/40 bg-navy-900">
+	<div class="hidden border-b border-white/10 bg-[#001230] lg:block">
+		<div
+			class="mx-auto flex max-w-7xl items-center justify-end px-4 py-1.5 sm:px-6 lg:px-8"
+		>
+			<a
+				href={resourceLink.href}
+				aria-current={isActive(resourceLink.href) ? "page" : undefined}
+				class={`font-heading text-xs font-bold tracking-wide text-gold-400 uppercase transition-colors hover:text-white ${
+					isActive(resourceLink.href) ? "underline underline-offset-4" : ""
+				}`}
+			>
+				{resourceLink.label} <span aria-hidden="true">&rarr;</span>
+			</a>
+		</div>
+	</div>
+
 	<div
 		class="mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 py-3 sm:px-6 lg:px-8"
 	>
@@ -109,6 +127,17 @@ const isActive = (href: string) =>
 					</li>
 				))
 			}
+			<li class="mt-2 border-t border-gold-500/30 pt-3">
+				<a
+					href={resourceLink.href}
+					aria-current={isActive(resourceLink.href) ? "page" : undefined}
+					class={`block py-2 font-heading text-sm font-bold tracking-wide text-white uppercase ${
+						isActive(resourceLink.href) ? "text-gold-400" : ""
+					}`}
+				>
+					{resourceLink.label}
+				</a>
+			</li>
 			<li class="pt-2">
 				<Button
 					href="/enroll-today"
