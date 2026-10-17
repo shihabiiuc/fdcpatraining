@@ -5,13 +5,13 @@ import { latestUpdate } from "../data/complianceUpdates";
 
 const navLinks = [
 	{ label: "Home", href: "/" },
-	{ label: "Course Overview", href: "/course-overview" },
-	{ label: "Pricing", href: "/pricing" },
-	{ label: "FAQ", href: "/faq" },
-	{ label: "Contact", href: "/contact" },
+	{ label: "Course Overview", href: "/course-overview/" },
+	{ label: "Pricing", href: "/pricing/" },
+	{ label: "FAQ", href: "/faq/" },
+	{ label: "Contact", href: "/contact/" },
 ];
 
-const resourceLink = { label: "Compliance Updates", href: "/update" };
+const resourceLink = { label: "Compliance Updates", href: "/update/" };
 
 const currentPath = Astro.url.pathname;
 const isActive = (href: string) =>
@@ -73,7 +73,7 @@ const isActive = (href: string) =>
 					))
 				}
 			</ul>
-			<Button href="/enroll-today" variant="glow">Start Training</Button>
+			<Button href="/enroll-today/" variant="glow">Start Training</Button>
 		</nav>
 
 		<button
@@ -151,7 +151,7 @@ const isActive = (href: string) =>
 			</li>
 			<li class="pt-2">
 				<Button
-					href="/enroll-today"
+					href="/enroll-today/"
 					variant="glow"
 					class="w-full justify-center"
 				>
