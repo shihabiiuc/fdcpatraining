@@ -12,6 +12,49 @@ interface Props {
 
 const { title, description, noindex = false } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+// Business identity for search engines: the business is "FDCPA Training",
+// kept separate from the course author's name.
+const siteURL = new URL("/", Astro.site).href;
+const structuredData = {
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "Organization",
+			"@id": `${siteURL}#organization`,
+			name: "FDCPA Training",
+			alternateName: "FDCPATraining.com",
+			url: siteURL,
+			logo: {
+				"@type": "ImageObject",
+				url: new URL("/logo.png", Astro.site).href,
+				width: 800,
+				height: 320,
+			},
+			description:
+				"FDCPA Training provides online FDCPA and CFPB Regulation F compliance training for collection professionals.",
+			email: "info@fdcpatraining.com",
+			telephone: "+1-512-522-8005",
+			contactPoint: {
+				"@type": "ContactPoint",
+				contactType: "customer service",
+				email: "info@fdcpatraining.com",
+				telephone: "+1-512-522-8005",
+				areaServed: "US",
+				availableLanguage: "English",
+			},
+		},
+		{
+			"@type": "WebSite",
+			"@id": `${siteURL}#website`,
+			name: "FDCPA Training",
+			alternateName: "FDCPATraining.com",
+			url: siteURL,
+			inLanguage: "en-US",
+			publisher: { "@id": `${siteURL}#organization` },
+		},
+	],
+};
 ---
 
 <!doctype html>
@@ -60,6 +103,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<meta property="og:url" content={canonicalURL} />
 		<meta property="og:site_name" content="FDCPA Training" />
 		<meta property="og:image" content={new URL("/logo.png", Astro.site)} />
+
+		<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 	</head>
 	<body class="bg-white text-navy-900">
 		<a href="#main-content" class="skip-link">Skip to content</a>
